@@ -7,6 +7,8 @@ export default defineConfig({
   lang: "en",
   cleanUrls: true, // https://vitepress.dev/guide/routing#generating-clean-url
 
+  outDir: '../public',
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
