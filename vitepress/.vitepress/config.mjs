@@ -9,8 +9,25 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    nav: [
+      // { text: 'Home', link: '/' },
+      // { text: 'Articles', link: '/articles' },
+      { text: 'Notes', link: '/notes' },
+      { text: 'About', link: '/about' },
+    ],
+
+    // sidebar: [
+    //   {
+    //     text: 'Examples',
+    //     items: [
+    //       { text: 'Markdown Examples', link: '/markdown-examples' },
+    //       { text: 'Runtime API Examples', link: '/api-examples' }
+    //     ]
+    //   }
+    // ],
+
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/meduzen/blog' }
+      { icon: 'github', link: 'https://github.com/meduzen/blog' },
     ]
   }
 })

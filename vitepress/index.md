@@ -6,6 +6,14 @@ hero:
   name: "Mehdi’s notes"
   text: "A boring title without the word “blog”."
   tagline: "Infrequent updates, planned from the beginning."
+#   actions:
+#     - theme: brand
+#       text: Read something
+#     #   text: Short notes
+#       link: /notes
+#     # - theme: alt
+#     #   text: Deep dive
+#     #   link: /articles
 
 features:
   - title: What to expect
