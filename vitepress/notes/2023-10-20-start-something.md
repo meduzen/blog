@@ -7,6 +7,6 @@ I’m happy I found [Vitepress](https://vitepress.dev) to support this place, it
 Things I need to do at some point:
 - add RSS feed(s);
 - do some front-end stuff for convenience, including a custom theme;
-- remember the third item of that list.
+- ~~remember the fourth item of that list~~ see how to connect the notes to the Fediverse.
 
 Anyway, today is the release date of the Nintendo Switch [_Super Mario Wonder_](https://supermariobroswonder.nintendo.com/) videogame, and Nintendo has [clearly been](https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-11-super-mario-bros-wonder-part-1/) high on drugs for this one.
