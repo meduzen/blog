@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
   tags: {
-    type: [String, Number],
+    type: Array[String, Number],
     required: true,
   },
 })
