@@ -30,11 +30,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
 </script>
 
 <template>
-  <template v-for="({
-    excerpt,
-    frontmatter: { title, publishedAt, tags },
-    url
-  }) in data">
+  <template v-for="({ excerpt, frontmatter: { title, publishedAt, tags }, url }) in data">
 
     <h2><a :href="url">{{ title }}</a></h2>
     <time :datetime="datetime(new Date(publishedAt), 'year')">{{ dateFormatter.format(publishedAt) }}</time>
