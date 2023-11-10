@@ -19,16 +19,19 @@ export default createContentLoader('articles/*.md', {
     // sort articles by date
 
     articles = articles
-      .filter(article => article.frontmatter.publishedAt < now)
+      .filter(({ frontmatter }) => frontmatter.publishedAt < now)
       .sort((a, b) => b.frontmatter.publishedAt - a.frontmatter.publishedAt)
 
+    // enrich frontmatter
 
-      articles
-      .filter(article => article.frontmatter.excerpt)
+    articles
       .forEach(article => {
 
         // convert Markdown excerpt to HTML
-        article.frontmatter.excerpt = mdRenderer.render(article.frontmatter.excerpt)
+        if ('excerpt' in article.frontmatter) {
+          article.frontmatter.excerpt = mdRenderer.render(article.frontmatter.excerpt)
+        }
+
 
         // convert coma-separated list of tags to array
         article.frontmatter.tags = (article.frontmatter.tags?.split(',') ?? []).map(tag => tag.trim())
