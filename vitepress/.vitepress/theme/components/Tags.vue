@@ -10,12 +10,16 @@ defineProps({
 
 <template>
   <ul class="tags" v-if="tags">
-    <li class="tag" v-for="tag in tags">{{ tag }}</li>
+    <li class="tag" v-for="tag in tags">
+      <Badge class="tag__badge">{{ tag }}</Badge>
+    </li>
   </ul>
 </template>
 
 <style scoped>
 .tags {
+  --tag-font-size: var(--vp-code-font-size);
+
   padding: 0;
 
   display: flex;
@@ -27,15 +31,10 @@ defineProps({
 }
 
 .tag {
-  --tag-font-size: var(--vp-code-font-size);
-
   margin: 0;
-  padding: .2em .75em;
+}
 
+.tag__badge {
   font-size: var(--tag-font-size, 0.85rem);
-  font-weight: 500;
-
-  background: var(--vp-badge-info-bg);
-  border-radius: .25em;
 }
 </style>
