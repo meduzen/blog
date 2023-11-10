@@ -27,10 +27,12 @@ defineProps({
 }
 
 .tag {
+  --tag-font-size: var(--vp-code-font-size);
+
   margin: 0;
   padding: .2em .75em;
 
-  font-size: var(--vp-code-font-size);
+  font-size: var(--tag-font-size, 0.85rem);
   font-weight: 500;
 
   background: var(--vp-badge-info-bg);
