@@ -2,7 +2,8 @@
   "scripts": {
     "docs:dev": "vitepress dev vitepress",
     "docs:build": "vitepress build vitepress",
-    "docs:preview": "vitepress preview vitepress"
+    "docs:preview": "vitepress preview vitepress",
+    "test:absolute-links": "lychee vitepress/**/*.md"
   },
   "devDependencies": {
     "vitepress": "^1.0.0-rc.22"
