@@ -1,9 +1,8 @@
-
 /* Make custom blocks more readable */
 
 .custom-block {
-  --vp-custom-block-font-size: 15px; // was `14px`
-  line-height: calc(24/14) !important; // was `24px`
+  --vp-custom-block-font-size: 15px; /* was `14px` */
+  line-height: calc(24/14) !important; /* was `24px` */
 }
 
 /* Smooth scroll for anchors */
