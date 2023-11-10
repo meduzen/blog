@@ -6,3 +6,9 @@
   }
 }
 
+/* Highlight block “focused” by an anchor. */
+/* Currently bug (due to Vitepress internal router? */
+
+.custom-block:target {
+  outline: currentColor solid;
+}
