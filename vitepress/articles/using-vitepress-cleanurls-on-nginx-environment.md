@@ -2,6 +2,8 @@
 title: Using Vitepress `cleanUrls` option on a Nginx server
 outline: [2, 3]
 tags: nginx, url-rewriting, vitepress, url, http, redirect
+publishedAt: 2023-11-10
+excerpt: We share, receive and see URLs all the time, so it’s nice to have [human-readable URLs](https://en.wikipedia.org/wiki/Clean_URL) like `example.tld/yeah` instead of `example.tld/yeah.html`. On this blog using Vitepress on a Nginx environment, [it works rather well]().
 ---
 
 We share, receive and see URLs all the time, so it’s nice to have [human-readable URLs](https://en.wikipedia.org/wiki/Clean_URL) like `example.tld/yeah` instead of `example.tld/yeah.html`.
