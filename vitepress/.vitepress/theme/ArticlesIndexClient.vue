@@ -1,5 +1,6 @@
 <script setup>
 import { data as importedData } from '../../articles.data'
+import Tags from './components/Tags.vue';
 import { excerptToLink } from './utils/frontmatter'
 import { datetime } from 'datetime-attribute'
 
@@ -35,9 +36,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
     <h2><a :href="url">{{ title }}</a></h2>
     <time :datetime="datetime(new Date(publishedAt), 'year')">{{ dateFormatter.format(publishedAt) }}</time>
 
-    <ul v-if="tags">
-      <li v-for="tag in tags">{{ tag }}</li>
-    </ul>
+    <tags v-if="tags" :tags="tags"></tags>
 
     <p v-if="excerpt" v-html="excerpt"></p>
   </template>
