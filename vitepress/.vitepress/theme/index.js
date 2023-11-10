@@ -1,3 +1,4 @@
+import './custom.css'
 import DefaultTheme from 'vitepress/theme'
 import NotesIndex from './NotesIndex.vue'
 
