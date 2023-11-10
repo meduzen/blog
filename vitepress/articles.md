@@ -1,3 +1,7 @@
+<script setup>
+import ArticlesIndex from './.vitepress/theme/ArticlesIndex.vue'
+</script>
+
 # Articles
 
-There’s nothing to see here at the moment.
+<ArticlesIndex/>

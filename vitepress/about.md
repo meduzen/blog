@@ -1,3 +1,5 @@
 # About
 
-There’s nothing to see here at the moment.
+This blog is powered by [Vitepress](https://vitepress.dev/), with a very small number of changes to handle index pages. The [code](https://github.com/meduzen/blog) is open source.
+
+I have no idea how I’ll tweak it in the future. For now it doesn’t feel more personal than [my personal page](https://mehdi.cc).

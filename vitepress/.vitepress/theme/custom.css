@@ -1,0 +1,21 @@
+/* Make custom blocks more readable */
+
+.custom-block {
+  --vp-custom-block-font-size: 15px; /* was `14px` */
+  line-height: calc(24/14) !important; /* was `24px` */
+}
+
+/* Smooth scroll for anchors */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Highlight block “focused” by an anchor. */
+/* Currently bug (due to Vitepress internal router? */
+
+.custom-block:target {
+  outline: currentColor solid;
+}

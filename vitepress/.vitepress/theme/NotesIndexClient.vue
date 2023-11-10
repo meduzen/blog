@@ -24,7 +24,7 @@ years.forEach(year => data[year].forEach(note => {
   excerptToLink(note)
 }))
 
-const dateFormatter = new Intl.DateTimeFormat('en-BG', {
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric',
   month: 'long',
 })
@@ -35,13 +35,13 @@ const dateFormatter = new Intl.DateTimeFormat('en-BG', {
     <h2><time :datetime="datetime(new Date(year), 'year')">{{ year }}</time></h2>
 
     <ul>
-      <li class="index__listItem" v-for="({ excerpt, frontmatter, url }) in data[year]">
-        <time :datetime="datetime(frontmatter.publishedAt)">
-          {{ dateFormatter.format(frontmatter.publishedAt) }}
+      <li class="index__listItem" v-for="({ frontmatter: { title, publishedAt, excerpt }, url }) in data[year]">
+        <time :datetime="datetime(publishedAt)">
+          {{ dateFormatter.format(publishedAt) }}
         </time>:
 
-        <p v-if="frontmatter.excerpt" v-html="frontmatter.excerpt"></p>
-        <a v-else :href="url">{{ frontmatter?.title }}</a>
+        <p v-if="excerpt" v-html="excerpt"></p>
+        <a v-else :href="url">{{ title }}</a>
       </li>
     </ul>
   </template>
