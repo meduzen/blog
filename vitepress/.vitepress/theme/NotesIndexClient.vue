@@ -24,7 +24,7 @@ years.forEach(year => data[year].forEach(note => {
   excerptToLink(note)
 }))
 
-const dateFormatter = new Intl.DateTimeFormat('en-BG', {
+const dateFormatter = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric',
   month: 'long',
 })
