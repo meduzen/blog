@@ -5,11 +5,10 @@ defineProps({
     required: true,
   },
 })
-
 </script>
 
 <template>
-  <ul class="tags" v-if="tags">
+  <ul class="tags">
     <li class="tag" v-for="tag in tags">
       <Badge class="tag__badge">{{ tag }}</Badge>
     </li>
