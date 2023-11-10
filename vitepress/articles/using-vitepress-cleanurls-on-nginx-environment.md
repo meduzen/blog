@@ -8,7 +8,7 @@ excerpt: We share, receive and see URLs all the time, so it’s nice to have [hu
 
 We share, receive and see URLs all the time, so it’s nice to have [human-readable URLs](https://en.wikipedia.org/wiki/Clean_URL) like `example.tld/yeah` instead of `example.tld/yeah.html`.
 
-On this blog using [Vitepress](vitepress.dev) on a [Nginx](https://nginx.org/) environment, it works rather well (with a minor trade-off).
+On this blog using [Vitepress](https://vitepress.dev) on a [Nginx](https://nginx.org/) environment, it works rather well (with a minor trade-off).
 
 ---
 
