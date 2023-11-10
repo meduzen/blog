@@ -5,7 +5,7 @@ export default defineConfig({
   title: "Mehdi’s Notes",
   description: "Mehdi Merah’s notes about creating web stuff.",
   lang: "en",
-  cleanUrls: false, // https://vitepress.dev/guide/routing#generating-clean-url
+  cleanUrls: true, // https://vitepress.dev/guide/routing#generating-clean-url
 
   outDir: '../public',
 
