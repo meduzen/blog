@@ -4,7 +4,8 @@ import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
 import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
 
-const baseUrl = `https://blog.mehdi.cc` // should come from .env
+/** @todo: should come from .env */
+const baseUrl = `https://blog.mehdi.cc`
 
 /**
  * @param {import('vitepress').SiteConfig} config
