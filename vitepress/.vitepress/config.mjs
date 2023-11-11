@@ -1,9 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { rss } from './rss.mjs'
 
+const APP_URL = `https://blog.mehdi.cc`
+const APP_TITLE = 'Mehdi’s Notes'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Mehdi’s Notes',
+  title: APP_TITLE,
   description: 'Content for your web-enthusiast brain, by Mehdi Merah.',
   lang: 'en',
   cleanUrls: true, // https://vitepress.dev/guide/routing#generating-clean-url
@@ -12,7 +15,8 @@ export default defineConfig({
   buildEnd: rss,
 
   head: [
-    ['meta', { name:'color-scheme', content:'dark light only' }]
+    ['meta', { name: 'color-scheme', content: 'dark light only' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.rss` }]
   ],
 
   themeConfig: {
@@ -22,6 +26,7 @@ export default defineConfig({
       { text: 'Articles', link: '/articles' },
       { text: 'Notes', link: '/notes' },
       { text: 'About', link: '/about' },
+      { text: 'RSS', link: '/feed.rss' },
     ],
 
     // sidebar: [

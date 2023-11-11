@@ -5,7 +5,7 @@ import { createContentLoader } from 'vitepress'
 import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
 
 /** @todo: should come from .env */
-const baseUrl = `https://blog.mehdi.cc`
+const APP_URL = `https://blog.mehdi.cc`
 
 /**
  * @param {import('vitepress').SiteConfig} config
@@ -17,14 +17,14 @@ export async function rss(config) {
    */
   const feed = new Feed({
     docs: 'https://www.rssboard.org/rss-specification',
-    link: baseUrl + 'link',
+    link: APP_URL + 'link',
     title: config.site.title,
     description: config.site.description,
     language: config.site.lang,
     // image: 'https://blog.mehdi.cc/file.png',
-    // favicon: `${baseUrl}/favicon.ico`,
+    // favicon: `${APP_URL}/favicon.ico`,
     copyright: 'Copyright © 2023-present, Mehdi Merah',
-    feed: `${baseUrl}/feed.rss`,
+    feed: `${APP_URL}/feed.rss`,
     ttl: 2880, // 1 day,
   });
 
@@ -34,8 +34,8 @@ export async function rss(config) {
     .forEach(({ url, excerpt, frontmatter, html }) =>
       feed.addItem({
         title: frontmatter.title,
-        id: `${baseUrl}${url}`,
-        link: `${baseUrl}${url}`,
+        id: `${APP_URL}${url}`,
+        link: `${APP_URL}${url}`,
         description: frontmatter.description || excerpt,
         content: html,
         date: frontmatter.publishedAt,
