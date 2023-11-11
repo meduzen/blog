@@ -32,8 +32,8 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
 
 <template>
   <template v-for="({ excerpt, frontmatter: { title, publishedAt, tags }, url }) in data">
+    <h2><a :href="url" v-html="title"/></h2>
 
-    <h2><a :href="url">{{ title }}</a></h2>
     <time :datetime="datetime(new Date(publishedAt), 'year')">{{ dateFormatter.format(publishedAt) }}</time>
 
     <tags v-if="tags" :tags="tags" />

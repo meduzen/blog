@@ -27,14 +27,16 @@ export default createContentLoader('articles/*.md', {
     articles
       .forEach(article => {
 
+        // parse Markdown in title
+        article.frontmatter.title = mdRenderer.render(article.frontmatter.title)
+
+        // convert coma-separated list of tags to array
+        article.frontmatter.tags = (article.frontmatter.tags?.split(',') ?? []).map(tag => tag.trim())
+
         // convert Markdown excerpt to HTML
         if ('excerpt' in article.frontmatter) {
           article.frontmatter.excerpt = mdRenderer.render(article.frontmatter.excerpt)
         }
-
-
-        // convert coma-separated list of tags to array
-        article.frontmatter.tags = (article.frontmatter.tags?.split(',') ?? []).map(tag => tag.trim())
       })
 
     return articles
