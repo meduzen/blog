@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { rss } from './rss.mjs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -8,6 +9,7 @@ export default defineConfig({
   cleanUrls: true, // https://vitepress.dev/guide/routing#generating-clean-url
 
   outDir: '../public',
+  buildEnd: rss,
 
   head: [
     ['meta', { name:'color-scheme', content:'dark light only' }]
