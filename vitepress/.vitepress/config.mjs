@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Mehdi’s Notes',
-  description: 'Mehdi Merah’s notes about creating web stuff.',
+  description: 'Content for your web-enthusiast brain, by Mehdi Merah.',
   lang: 'en',
   cleanUrls: true, // https://vitepress.dev/guide/routing#generating-clean-url
 
