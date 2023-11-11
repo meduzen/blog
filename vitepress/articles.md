@@ -8,4 +8,6 @@ import ArticlesIndex from './.vitepress/theme/ArticlesIndex.vue'
 
 # Articles
 
+Content for your web-enthusiast brain.
+
 <ArticlesIndex/>
