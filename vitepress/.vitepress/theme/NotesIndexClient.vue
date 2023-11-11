@@ -35,21 +35,15 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
     <h2><time :datetime="datetime(new Date(year), 'year')">{{ year }}</time></h2>
 
     <ul>
-      <li class="index__listItem" v-for="({ frontmatter: { title, publishedAt, excerpt }, url }) in data[year]">
-        <time :datetime="datetime(publishedAt)">
-          {{ dateFormatter.format(publishedAt) }}
-        </time>:
-
-        <p v-if="excerpt" v-html="excerpt"></p>
-        <a v-else :href="url">{{ title }}</a>
+      <li v-for="({ frontmatter: { title, publishedAt, excerpt }, url }) in data[year]">
+        <p>
+          <time :datetime="datetime(publishedAt)">
+            {{ dateFormatter.format(publishedAt) }}
+          </time>:
+          <span v-if="excerpt" v-html="excerpt"/>
+          <a v-else :href="url">{{ title }}</a>
+        </p>
       </li>
     </ul>
   </template>
 </template>
-
-<style scoped>
-.index__listItem > :not(time) {
-  display: inline-block;
-  margin-block: 0;
-}
-</style>
