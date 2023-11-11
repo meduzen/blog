@@ -1,5 +1,6 @@
 import groupBy from "core-js-pure/full/object/group-by"
 import { createContentLoader, createMarkdownRenderer } from 'vitepress'
+import { comparePublicationDate, isPublished } from "./.vitepress/utils/frontmatter.mjs"
 
 const mdRenderer = await createMarkdownRenderer()
 
@@ -19,8 +20,8 @@ export default createContentLoader('articles/*.md', {
     // sort articles by date
 
     articles = articles
-      .filter(({ frontmatter }) => frontmatter.publishedAt < now)
-      .sort((a, b) => b.frontmatter.publishedAt - a.frontmatter.publishedAt)
+      .filter(isPublished)
+      .sort(comparePublicationDate)
 
     // enrich frontmatter
 
