@@ -50,4 +50,5 @@ export default defineConfig({
       text: 'Edit this page on GitHub',
     },
   },
+  lastUpdated: true,
 })
