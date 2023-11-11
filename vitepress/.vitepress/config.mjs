@@ -9,6 +9,10 @@ export default defineConfig({
 
   outDir: '../public',
 
+  head: [
+    ['meta', { name:'color-scheme', content:'dark light only' }]
+  ],
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
