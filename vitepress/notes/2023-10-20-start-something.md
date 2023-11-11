@@ -1,5 +1,6 @@
 ---
 title: Better late then never
+description: Yup, I’ve started a blog.
 publishedAt: 2023-10-20
 excerpt: I think [I’ve started something]().
 ---
