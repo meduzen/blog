@@ -3,9 +3,12 @@
     "docs:dev": "vitepress dev vitepress",
     "docs:build": "vitepress build vitepress",
     "docs:preview": "vitepress preview vitepress",
+    "size": "size-limit",
     "test:absolute-links": "lychee vitepress/**/*.md"
   },
   "devDependencies": {
+    "@size-limit/preset-app": "^10.0.2",
+    "size-limit": "^10.0.2",
     "vitepress": "^1.0.0-rc.22"
   },
   "dependencies": {

@@ -1,0 +1,22 @@
+[
+  {
+      "name": "Everything",
+      "path": "public",
+      "brotli": true
+  },
+  {
+      "name": "Assets",
+      "path": ["public/assets"],
+      "brotli": true
+  },
+  {
+      "name": "Articles",
+      "path": ["public/articles"],
+      "brotli": true
+  },
+  {
+      "name": "Notes",
+      "path": ["public/notes"],
+      "brotli": true
+  }
+]
