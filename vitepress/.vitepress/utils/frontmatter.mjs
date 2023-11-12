@@ -1,4 +1,4 @@
-/**@typedef {import('vitepress').ContentData} ContentData */
+/** @typedef {import('vitepress').ContentData} ContentData */
 
 /**
  * Compare frontmatter publication date

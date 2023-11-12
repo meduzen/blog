@@ -7,9 +7,7 @@ import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
 /** @todo: should come from .env */
 const APP_URL = `https://blog.mehdi.cc`
 
-/**
- * @param {import('vitepress').SiteConfig} config
- */
+/** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
   /**
    * https://www.rssboard.org/rss-profile
