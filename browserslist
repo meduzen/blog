@@ -1,0 +1,14 @@
+# Countries set: https://canistop.net/b/safari/12?regions=be,fr,gb,nl,za,us,no,se,de,jp,ca,ie,kr
+# npx browserslist --coverage=be,fr,gb,nl,za,us,no,se,de,jp,ca,ie,kr
+
+and_chr >= 100
+Chrome >= 100
+
+Edge >= 102
+Firefox >= 91
+Opera >= 90
+
+ios_saf >= 12.2
+Safari >= 13.1
+
+Samsung >= 16
