@@ -16,6 +16,8 @@ On this blog using [Vitepress](https://vitepress.dev) on a [Nginx](https://nginx
 # Vitepress `cleanUrls` option on a Nginx server
 
 <datetime :date="$frontmatter.publishedAt" formatter="longdate"/>
+<tags/>
+
 Setting Vitepress [`cleanUrls`](https://vitepress.dev/reference/site-config#cleanurls) to `true` removes the trailing `.html` from URLs. The internal links of your Vitepress app changes **from `<a href="/something.html">` to `<a href="/something">`**.
 
 However, `cleanUrls` does not change the file names or the folder structure of the generated HTML files, which means your server must now be able to serve the `/something.html` file when the `/something` URL is requested.

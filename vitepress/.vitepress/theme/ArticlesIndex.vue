@@ -33,7 +33,7 @@ onBeforeMount(() => {
     <h2><a :href="url" v-html="title"/></h2>
 
     <datetime :date="publishedAt" formatter="longdate"/>
-    <tags v-if="tags" :tags="tags" />
+    <tags :tags="tags" />
 
     <p v-if="excerpt" v-html="excerpt"></p>
   </template>

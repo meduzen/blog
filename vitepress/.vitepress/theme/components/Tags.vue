@@ -1,14 +1,23 @@
 <script setup>
-defineProps({
+import { useData } from 'vitepress'
+
+const props = defineProps({
   tags: {
     type: Array[String, Number],
-    required: true,
+    required: false,
+    default: undefined,
   },
 })
+
+let tags = props.tags ?? useData().frontmatter.value.tags
+
+if (typeof tags == 'string') {
+  tags = tags.split(',').map(tag => tag.trim())
+}
 </script>
 
 <template>
-  <ul class="tags">
+  <ul v-if="tags.length" class="tags">
     <li class="tag" v-for="tag in tags">
       <Badge class="tag__badge">{{ tag }}</Badge>
     </li>
