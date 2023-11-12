@@ -19,6 +19,18 @@ export default defineConfig({
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.xml` }]
   ],
 
+  vite: {
+    ssr: {
+      /**
+       * Prevent “module not found” error. Solution from
+       * https://github.com/vuejs/vitepress/issues/2832#issuecomment-1689498631
+       * or any search using `noExternal` on Vitepress and Vite repos.
+       * @todo: Shouldn’t be needed on Vite 5.
+       */
+      noExternal: ['datetime-attribute'],
+    },
+  },
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
