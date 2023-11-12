@@ -7,7 +7,7 @@ excerpt: I think [I’ve started something]().
 
 # Better late then never
 
-2023-10-20
+<datetime :date="$frontmatter.publishedAt"/>
 
 I’m happy I found [Vitepress](https://vitepress.dev) to support this place, it will do the job for now. It’s been half-a-decade since I wanted to write and share about web stuff (mainly development), so here I am.
 
