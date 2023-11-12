@@ -16,7 +16,7 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'color-scheme', content: 'dark light only' }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.rss` }]
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.xml` }]
   ],
 
   themeConfig: {
@@ -26,7 +26,7 @@ export default defineConfig({
       { text: 'Articles', link: '/articles' },
       { text: 'Notes', link: '/notes' },
       { text: 'About', link: '/about' },
-      { text: 'RSS', link: '/feed.rss' },
+      { text: 'RSS feed', link: '/feed.xml' },
     ],
 
     // sidebar: [

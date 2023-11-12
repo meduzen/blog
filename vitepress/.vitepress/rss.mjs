@@ -24,7 +24,7 @@ export async function rss(config) {
     // image: 'https://blog.mehdi.cc/file.png',
     // favicon: `${APP_URL}/favicon.ico`,
     copyright: 'Copyright © 2023-present, Mehdi Merah',
-    feed: `${APP_URL}/feed.rss`,
+    feed: `${APP_URL}/feed.xml`,
     ttl: 2880, // 1 day,
   });
 
@@ -47,5 +47,5 @@ export async function rss(config) {
       })
     )
 
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
+  writeFileSync(path.join(config.outDir, 'feed.xml'), feed.rss2())
 }
