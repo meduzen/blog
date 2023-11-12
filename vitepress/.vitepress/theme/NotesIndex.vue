@@ -1,7 +1,6 @@
 <script setup>
 import { onBeforeMount, reactive } from 'vue'
 import { data as importedData } from '../../notes.data'
-import { datetime } from 'datetime-attribute'
 
 // The following declaration is just to import type autocompletion. 😑
 
@@ -29,23 +28,17 @@ onBeforeMount(() => {
     })
 })
 
-const dateFormatter = new Intl.DateTimeFormat('en-GB', {
-  day: 'numeric',
-  month: 'long',
-})
 </script>
 
 <template>
   <template v-for="year in years">
 
-    <h2><time :datetime="datetime(new Date(year), 'year')">{{ year }}</time></h2>
+    <h2><datetime :date="year" precision="year"/></h2>
 
     <ul>
       <li v-for="({ excerptTransformed, frontmatter: { title, publishedAt, excerpt }, url }) in data[year]">
         <p>
-          <time :datetime="datetime(publishedAt)">
-            {{ dateFormatter.format(publishedAt) }}
-          </time>:
+          <datetime :date="publishedAt" formatter="yearless"/>:
 
           <span v-if="excerptTransformed" v-html="excerpt"/>
           <a v-else :href="url">{{ title }}</a>

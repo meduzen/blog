@@ -1,7 +1,6 @@
 <script setup>
 import { onBeforeMount, reactive } from 'vue'
 import { data as importedData } from '../../articles.data'
-import { datetime } from 'datetime-attribute'
 import Tags from './components/Tags.vue';
 
 // The following declaration is just to import type autocompletion. 😑
@@ -26,12 +25,6 @@ onBeforeMount(() => {
     data.forEach(excerptToLink)
   })
 })
-
-const dateFormatter = new Intl.DateTimeFormat('en-GB', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-})
 </script>
 
 <template>
@@ -39,10 +32,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-GB', {
 
     <h2><a :href="url" v-html="title"/></h2>
 
-    <time :datetime="datetime(new Date(publishedAt), 'year')">
-      {{ dateFormatter.format(publishedAt) }}
-    </time>
-
+    <datetime :date="publishedAt" formatter="longdate"/>
     <tags v-if="tags" :tags="tags" />
 
     <p v-if="excerpt" v-html="excerpt"></p>
