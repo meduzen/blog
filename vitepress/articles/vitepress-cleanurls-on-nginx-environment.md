@@ -13,7 +13,7 @@ On this blog using [Vitepress](https://vitepress.dev) on a [Nginx](https://nginx
 
 ---
 
-# Using Vitepress `cleanUrls` option on a Nginx server
+# Vitepress `cleanUrls` option on a Nginx server
 
 Setting Vitepress [`cleanUrls`](https://vitepress.dev/reference/site-config#cleanurls) to `true` removes the trailing `.html` from URLs. The internal links of your Vitepress app changes **from `<a href="/something.html">` to `<a href="/something">`**.
 
