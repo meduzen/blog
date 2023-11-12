@@ -1,12 +1,13 @@
 {
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=20.0"
   },
   "scripts": {
-    "docs:dev": "vitepress dev vitepress",
-    "docs:build": "vitepress build vitepress",
-    "docs:preview": "vitepress preview vitepress",
+    "dev": "vitepress dev vitepress",
+    "build": "vitepress build vitepress",
+    "preview": "vitepress preview vitepress",
     "size": "size-limit",
     "test:absolute-links": "lychee vitepress/**/*.md"
   },
