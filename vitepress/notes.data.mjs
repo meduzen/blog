@@ -1,5 +1,6 @@
 import groupBy from "core-js-pure/full/object/group-by"
 import { createContentLoader, createMarkdownRenderer } from 'vitepress'
+import { comparePublicationDate, hasExcerptInFrontmatter, isPublished } from "./.vitepress/utils/frontmatter.mjs"
 
 const mdRenderer = await createMarkdownRenderer()
 
@@ -19,13 +20,13 @@ export default createContentLoader('notes/*.md', {
     // sort notes by date
 
     notes = notes
-      .filter(note => note.frontmatter.publishedAt < now)
-      .sort((a, b) => b.frontmatter.publishedAt - a.frontmatter.publishedAt)
+      .filter(isPublished)
+      .sort(comparePublicationDate)
 
     // convert Markdown excerpt to HTML
 
     notes
-      .filter(note => note.frontmatter.excerpt)
+      .filter(hasExcerptInFrontmatter)
       .forEach(note => {
         note.frontmatter.excerpt = mdRenderer.render(note.frontmatter.excerpt)
       })

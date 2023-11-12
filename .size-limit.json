@@ -18,5 +18,10 @@
       "name": "Notes",
       "path": ["public/notes"],
       "brotli": true
+  },
+  {
+      "name": "Feeds",
+      "path": ["public/feed.xml"],
+      "brotli": true
   }
 ]
