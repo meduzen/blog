@@ -12,7 +12,7 @@ excerpt: I think [I’ve started something]().
 I’m happy I found [Vitepress](https://vitepress.dev) to support this place, it will do the job for now. It’s been half-a-decade since I wanted to write and share about web stuff (mainly development), so here I am.
 
 Things I need to do at some point:
-- add RSS feed(s);
+- ~~add RSS feed(s)~~;
 - do some front-end stuff for convenience, including a custom theme;
 - ~~remember the fourth item of that list~~ see how to connect the notes to the Fediverse.
 
