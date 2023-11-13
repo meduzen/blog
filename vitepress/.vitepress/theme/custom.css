@@ -1,8 +1,21 @@
+/* Hide content visually */
+
+.visually-hidden:not(:focus):not(:active) {
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+
+  position: absolute;
+
+  white-space: nowrap;
+}
+
 /* Make custom blocks more readable */
 
 .custom-block {
   --vp-custom-block-font-size: 15px; /* was `14px` */
-  line-height: calc(24/14) !important; /* was `24px` */
+  line-height: calc(24 / 14) !important; /* was `24px` */
 }
 
 /* Smooth scroll for anchors */

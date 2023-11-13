@@ -19,6 +19,12 @@ export default defineConfig({
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.xml` }]
   ],
 
+  // add temporary stupid tracking
+  transformHtml: async code => code.replace(
+    '\n  </body>\n</html>',
+    '<img class="visually-hidden" src="https://matomo.mehdi.cc/piwik.php?idsite=4&amp;rec=1" style="border:0" alt=""></body>\n</html>'
+  ),
+
   vite: {
     ssr: {
       /**
