@@ -1,3 +1,9 @@
+/* https://github.com/meduzen/blog/issues/16 */
+
+:root {
+  scrollbar-gutter: stable;
+}
+
 /* Hide content visually */
 
 .visually-hidden:not(:focus):not(:active) {
