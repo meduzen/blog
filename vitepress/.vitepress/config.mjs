@@ -78,6 +78,11 @@ export default defineConfig({
       },
       text: 'Edit this page on GitHub',
     },
+
+    footer: {
+      message: 'Got any comment or question about the content? Feel free to <a href="https://mehdi.cc/#contact" target="_blank" rel="noopener">send me an email</a> or use GitHub <a href="https://github.com/meduzen/blog/discussions" target="_blank" rel="noopener">discussions</a> or <a href="https://github.com/meduzen/blog/issues" target="_blank" rel="noopener">issues</a>.',
+      // copyright: 'Copyright © 2023-present Mehdi Merah'
+    }
   },
   lastUpdated: true,
 })
