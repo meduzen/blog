@@ -1,7 +1,21 @@
-/* https://github.com/meduzen/blog/issues/16 */
+/* HTML elements */
 
 :root {
+  /* https://github.com/meduzen/blog/issues/16 */
   scrollbar-gutter: stable;
+}
+
+kbd {
+  margin: 0 .25em;
+  padding: .15em .2em;
+
+  white-space: nowrap;
+  font-size: .8em;
+  font-weight: 700;
+
+  border: .15em solid;
+  border-radius: .2rem;
+  box-shadow: .1em .1em 0 1px currentColor;
 }
 
 /* Hide content visually */
