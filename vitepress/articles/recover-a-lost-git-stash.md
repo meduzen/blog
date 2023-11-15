@@ -20,7 +20,7 @@ Sometimes you end up [stashing](https://css-irl.info/how-git-stash-can-help-you-
 
 Fortunately, I managed to recover them. Here’s the two-steps procedure that worked for me after going [through](https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git) [various](https://stackoverflow.com/questions/32517870/how-to-undo-git-stash-clear) [readings](https://stackoverflow.com/questions/20537223/when-should-i-use-git-stash) (and others), and also some general tips.
 
-## 1. List lost stashes
+## Step 1: list lost stashes
 
 In your project where stashes are trashed:
 
@@ -90,7 +90,7 @@ ForEach-Object { git log --merges --no-walk $_ }`
 (Really useful post btw!)
 :::
 
-## 2. Send a lost stash back where it comes from
+## Step 2: send a lost stash back where it comes from
 
 Let’s use the commit hash of the second stash (from the previous list):
 
@@ -115,7 +115,7 @@ It did the trick for that person using git 2.22.0 on Ubuntu 18.04.
 
 If your Git isn’t in English, you’ll have to run `alias git='LANG=en_GB git'` each time you want to recover a set of stashes (thanks [mathieuschopfer](https://dev.to/mathieuschopfer/comment/egd0)), otherwise the `unreachable` flag in `git fsck --unreachable` might be in another language, so you can either:
 - alias the language like Mathieu (put in in your `.bashrc` file so it becomes permanent);
-- adapt the [first command](#1-list-lost-stashes): translate `unreachable` into your git language and update the [`cut` command](https://man.openbsd.org/cut.1).
+- adapt the [first command](#step-1-list-lost-stashes): translate `unreachable` into your git language and update the [`cut` command](https://man.openbsd.org/cut.1).
 
 ## Advices
 
