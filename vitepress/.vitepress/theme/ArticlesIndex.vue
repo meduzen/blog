@@ -36,5 +36,7 @@ onBeforeMount(() => {
     <tags :tags="tags" />
 
     <p v-if="excerpt" v-html="excerpt"></p>
+
+    <a :href="url">Continue reading</a>
   </template>
 </template>
