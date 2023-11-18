@@ -4,9 +4,16 @@
       "path": "public"
   },
   {
-      "name": "Assets",
-      "path": ["public/assets"],
-      "brotli": true
+      "name": "Assets (excluding CSS and JS)",
+      "path": ["public/assets", "!*{public/assets/**/*.css,public/assets/**/*.js}"]
+  },
+  {
+      "name": "CSS",
+      "path": ["public/**/*.css"]
+  },
+  {
+      "name": "JavaScript",
+      "path": ["public/**/*.js"]
   },
   {
       "name": "Articles",
@@ -15,6 +22,10 @@
   {
       "name": "Notes",
       "path": ["public/notes"]
+  },
+  {
+      "name": "Media for articles and notes",
+      "path": ["public/content"]
   },
   {
       "name": "Feeds",
