@@ -1,27 +1,34 @@
 [
   {
       "name": "Everything",
-      "path": "public",
-      "brotli": true
+      "path": "public"
   },
   {
-      "name": "Assets",
-      "path": ["public/assets"],
-      "brotli": true
+      "name": "Assets (excluding CSS and JS)",
+      "path": ["public/assets", "!*{public/assets/**/*.css,public/assets/**/*.js}"]
+  },
+  {
+      "name": "CSS",
+      "path": ["public/**/*.css"]
+  },
+  {
+      "name": "JavaScript",
+      "path": ["public/**/*.js"]
   },
   {
       "name": "Articles",
-      "path": ["public/articles"],
-      "brotli": true
+      "path": ["public/articles"]
   },
   {
       "name": "Notes",
-      "path": ["public/notes"],
-      "brotli": true
+      "path": ["public/notes"]
+  },
+  {
+      "name": "Media for articles and notes",
+      "path": ["public/content"]
   },
   {
       "name": "Feeds",
-      "path": ["public/feed.xml"],
-      "brotli": true
+      "path": ["public/feed.xml"]
   }
 ]
