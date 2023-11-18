@@ -1,8 +1,7 @@
 [
   {
       "name": "Everything",
-      "path": "public",
-      "brotli": true
+      "path": "public"
   },
   {
       "name": "Assets",
@@ -11,17 +10,14 @@
   },
   {
       "name": "Articles",
-      "path": ["public/articles"],
-      "brotli": true
+      "path": ["public/articles"]
   },
   {
       "name": "Notes",
-      "path": ["public/notes"],
-      "brotli": true
+      "path": ["public/notes"]
   },
   {
       "name": "Feeds",
-      "path": ["public/feed.xml"],
-      "brotli": true
+      "path": ["public/feed.xml"]
   }
 ]
