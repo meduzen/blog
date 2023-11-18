@@ -53,7 +53,7 @@ kbd {
   outline: currentColor solid;
 }
 
-/* Make only visible under specific conditions */
+/* Make element only visible under specific conditions */
 
 @media not (prefers-color-scheme: dark) {
   .only-when-dark {
