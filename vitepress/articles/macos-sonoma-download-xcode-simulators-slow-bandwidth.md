@@ -6,7 +6,7 @@ publishedAt: 2023-11-18
 outline: [2, 3]
 ---
 
-Since [macOS Sonoma](https://www.apple.com/macos/sonoma/) (codename for macOS 14), [Xcode](https://developer.apple.com/xcode/) doesn’t include any iOS Simulator anymore, so it’s now 50% lighter to download (3.2 GB instead of 7 GB), which is nice… except that downloading the Simulator separately now sucks if your bandwidth is slow.
+Since [macOS Sonoma](https://www.apple.com/macos/sonoma/) (codename for macOS 14), [Xcode](https://developer.apple.com/xcode/) doesn’t include any iOS Simulator anymore, so it’s now 50% lighter to download (3.2 GB instead of 7 GB), which is nice… except that downloading the Simulator separately sucks if your bandwidth is slow.
 
 ---
 # Downloading Xcode Simulators on macOS Sonoma when the bandwidth is slow
