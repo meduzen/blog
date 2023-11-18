@@ -52,3 +52,17 @@ kbd {
 .custom-block:target {
   outline: currentColor solid;
 }
+
+/* Make element only visible under specific conditions */
+
+@media not (prefers-color-scheme: dark) {
+  .only-when-dark {
+    display: none;
+  }
+}
+
+@media not (prefers-color-scheme: light) {
+  .only-when-light {
+    display: none;
+  }
+}
