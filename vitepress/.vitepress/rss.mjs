@@ -179,4 +179,40 @@ export async function rss(config) {
     )
 
   writeFileSync(path.join(config.outDir, 'feed-articles-excerpts-only.xml'), feedWithArticlesExcerptOnly.rss2())
+
+  /**
+   * ARTICLES EXCERPTS + NOTES
+   */
+
+  const feedWithNotesAndArticlesExcerpts = new Feed({
+    docs: 'https://www.rssboard.org/rss-specification',
+    link: APP_URL,
+    title: 'Mehdi’s light feed',
+    description: 'Articles excerpts and notes.',
+    language: config.site.lang,
+    // image: 'https://blog.mehdi.cc/file.png',
+    // favicon: `${APP_URL}/favicon.ico`,
+    copyright: 'Copyright © 2023-present, Mehdi Merah',
+    feed: `${APP_URL}/feed-articles-excerpts-and-notes.xml`,
+    ttl: 2880, // 1 day,
+  });
+
+  content
+    .forEach(({ url, excerpt, frontmatter, html }) =>
+      feedWithNotesAndArticlesExcerpts.addItem({
+        title: frontmatter.title,
+        id: `${APP_URL}${url}`,
+        link: `${APP_URL}${url}`,
+        description: frontmatter.description || excerpt,
+        content: isNote({ url }) ? html : excerpt,
+        date: frontmatter.publishedAt,
+        author: [{
+          name: 'Mehdi Merah',
+          link: 'https://mehdi.cc',
+          email: 'hi@mehdi.cc',
+        }],
+      })
+    )
+
+  writeFileSync(path.join(config.outDir, 'feed-articles-excerpts-and-notes.xml'), feedWithNotesAndArticlesExcerpts.rss2())
 }
