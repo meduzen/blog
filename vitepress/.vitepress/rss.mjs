@@ -2,24 +2,13 @@ import path from 'path'
 import { writeFileSync } from 'fs'
 import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
+import { isArticle, isNote } from './utils/content-type.mjs'
 import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
 
 /** @typedef {import('vitepress').ContentData} ContentData */
 
 /** @todo: should come from .env */
 const APP_URL = `https://blog.mehdi.cc`
-
-/**
- * @param {ContentData} content
- * @param {string} type
- */
-const isContentType = ({ url }, type) => url.startsWith(`/${type}s/`)
-
-/** @param {ContentData} content */
-const isArticle = content => isContentType(content, 'article')
-
-/** @param {ContentData} content */
-const isNote = content => isContentType(content, 'note')
 
 /** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
