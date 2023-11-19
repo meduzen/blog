@@ -29,6 +29,6 @@
   },
   {
       "name": "Feeds",
-      "path": ["public/feed.xml"]
+      "path": ["public/feed.xml", "public/feed-*.xml"]
   }
 ]
