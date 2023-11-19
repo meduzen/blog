@@ -17,7 +17,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v1.8.0
         with:
-          args: './vitepress/**/*.md'
+          args: './vitepress/**/*.md --base ./vitepress/public'
           fail: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

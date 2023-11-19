@@ -125,7 +125,7 @@ I **always add a commit message** to stash using `git stash save -m "My commit m
 
 Commit messages also help Git clients:
 - [GitUp](https://gitup.co), the Git client I use, completely fails at showing unnamed stashes. That’s probably why you can’t create a stash in GitUp without giving it a name, which is great!
-- The well-known [SourceTree](https://www.sourcetreeapp.com/) succeeds at showing unnamed stashes, but as you can guess, the list isn’t friendly to browse: ![Unnamed stashes in SourceTree](../public/content/sourcetree-stash-list-2018.png)
+- The well-known [SourceTree](https://www.sourcetreeapp.com/) succeeds at showing unnamed stashes, but as you can guess, the list isn’t friendly to browse: ![Unnamed stashes in SourceTree](/content/sourcetree-stash-list-2018.png)
 
 ### Prefer `git stash apply` over `git stash pop`
 
