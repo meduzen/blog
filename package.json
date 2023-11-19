@@ -9,7 +9,7 @@
     "build": "vitepress build vitepress",
     "preview": "vitepress preview vitepress",
     "size": "size-limit",
-    "test:absolute-links": "lychee vitepress/**/*.md"
+    "test:absolute-links": "lychee vitepress/**/*.md --base ./vitepress/public"
   },
   "devDependencies": {
     "@size-limit/preset-app": "^11",
