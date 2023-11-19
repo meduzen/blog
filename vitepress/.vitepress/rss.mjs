@@ -10,6 +10,13 @@ import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
 /** @todo: should come from .env */
 const APP_URL = `https://blog.mehdi.cc`
 
+/** @type {import('feed/lib/feed.d.ts').Author[]} */
+const author = [{
+  name: 'Mehdi Merah',
+  link: 'https://mehdi.cc',
+  email: 'hi@mehdi.cc',
+}]
+
 /** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
 
@@ -48,11 +55,7 @@ export async function rss(config) {
         description: frontmatter.description || excerpt,
         content: html,
         date: frontmatter.publishedAt,
-        author: [{
-          name: 'Mehdi Merah',
-          link: 'https://mehdi.cc',
-          email: 'hi@mehdi.cc',
-        }],
+        author,
       })
     )
 
@@ -85,11 +88,7 @@ export async function rss(config) {
         description: frontmatter.description || excerpt,
         content: html,
         date: frontmatter.publishedAt,
-        author: [{
-          name: 'Mehdi Merah',
-          link: 'https://mehdi.cc',
-          email: 'hi@mehdi.cc',
-        }],
+        author,
       })
     )
 
@@ -122,11 +121,7 @@ export async function rss(config) {
         description: frontmatter.description || excerpt,
         content: html,
         date: frontmatter.publishedAt,
-        author: [{
-          name: 'Mehdi Merah',
-          link: 'https://mehdi.cc',
-          email: 'hi@mehdi.cc',
-        }],
+        author,
       })
     )
 
@@ -159,11 +154,7 @@ export async function rss(config) {
         description: frontmatter.description || excerpt,
         content: excerpt,
         date: frontmatter.publishedAt,
-        author: [{
-          name: 'Mehdi Merah',
-          link: 'https://mehdi.cc',
-          email: 'hi@mehdi.cc',
-        }],
+        author,
       })
     )
 
@@ -195,11 +186,7 @@ export async function rss(config) {
         description: frontmatter.description || excerpt,
         content: isNote({ url }) ? html : excerpt,
         date: frontmatter.publishedAt,
-        author: [{
-          name: 'Mehdi Merah',
-          link: 'https://mehdi.cc',
-          email: 'hi@mehdi.cc',
-        }],
+        author,
       })
     )
 
