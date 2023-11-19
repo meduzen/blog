@@ -18,7 +18,7 @@ let config = null
  * @param {Item} a
  * @param {Item} b
  */
-export const compareItemDate = (a, b) => new Date(b.date) - new Date(a.date)
+export const compareItemsDates = (a, b) => new Date(b.date) - new Date(a.date)
 
 /**
  * @param {SiteConfig} config

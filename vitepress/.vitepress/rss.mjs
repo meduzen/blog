@@ -2,7 +2,7 @@ import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
 import { isArticle, isNote } from './utils/content-type.mjs'
 import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
-import { baseFeedOptions, compareItemDate, feedItem, writeFeed } from './utils/rss.mjs'
+import { baseFeedOptions, compareItemsDates, feedItem, writeFeed } from './utils/rss.mjs'
 
 /** @todo: should come from .env */
 const APP_URL = `https://blog.mehdi.cc`
@@ -41,7 +41,7 @@ export async function rss(config) {
     ...feedOptions,
   })
 
-  feedWithEverything.items = [...notesItems, ...articlesItems].toSorted(compareItemDate)
+  feedWithEverything.items = [...notesItems, ...articlesItems].toSorted(compareItemsDates)
 
   writeFeed('feed', feedWithEverything)
 
@@ -93,7 +93,7 @@ export async function rss(config) {
     ...feedOptions,
   })
 
-  feedWithArticlesExcerptsAndNotes.items = [...notesItems, ...articlesItemsExcerptOnly].toSorted(compareItemDate)
+  feedWithArticlesExcerptsAndNotes.items = [...notesItems, ...articlesItemsExcerptOnly].toSorted(compareItemsDates)
 
   writeFeed('feed-articles-excerpts-and-notes', feedWithArticlesExcerptsAndNotes)
 }
