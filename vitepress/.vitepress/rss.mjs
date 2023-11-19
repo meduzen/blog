@@ -1,194 +1,99 @@
-import path from 'path'
-import { writeFileSync } from 'fs'
 import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
 import { isArticle, isNote } from './utils/content-type.mjs'
 import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
-
-/** @typedef {import('vitepress').ContentData} ContentData */
+import { baseFeedOptions, compareItemDate, feedItem, writeFeed } from './utils/rss.mjs'
 
 /** @todo: should come from .env */
 const APP_URL = `https://blog.mehdi.cc`
 
-/** @type {import('feed/lib/feed.d.ts').Author[]} */
-const author = [{
-  name: 'Mehdi Merah',
-  link: 'https://mehdi.cc',
-  email: 'hi@mehdi.cc',
-}]
-
 /** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
+  const feedOptions = baseFeedOptions()
 
-  /** @type {ContentData[]} */
+  // Load content and turn it into feed items.
+
+  /** @type {import('vitepress').ContentData[]} */
   const content = (await createContentLoader(['articles/*.md', 'notes/*.md'], { excerpt: true, render: true }).load())
     .filter(isPublished)
     .toSorted(comparePublicationDate)
 
-  /**
-   * FULL CONTENT
-   */
+  const notesItems = content.filter(isNote).map(feedItem)
+  const articlesItems = content.filter(isArticle).map(feedItem)
+  const articlesItemsExcerptOnly = content
+    .filter(isArticle)
+    .map(content => feedItem(content, { content: content.excerpt }))
 
   /**
-   * https://www.rssboard.org/rss-profile
-   * https://github.com/jpmonette/feed
+   * Generate all feeds and store them on disk.
+   *
+   * - spec: https://www.rssboard.org/rss-specification
+   * - spec best practices: https://www.rssboard.org/rss-profile
+   * - `feed` package: https://github.com/jpmonette/feed
    */
+
+  // Feed 1: full content
+
   const feedWithEverything = new Feed({
-    docs: 'https://www.rssboard.org/rss-specification',
-    link: APP_URL,
     title: 'Mehdi’s notes and articles',
     description: config.site.description,
-    language: config.site.lang,
-    // image: 'https://blog.mehdi.cc/file.png',
-    // favicon: `${APP_URL}/favicon.ico`,
-    copyright: 'Copyright © 2023-present, Mehdi Merah',
     feed: `${APP_URL}/feed.xml`,
-    ttl: 2880, // 1 day,
-  });
+    ...feedOptions,
+  })
 
-  content
-    .forEach(({ url, excerpt, frontmatter, html }) =>
-      feedWithEverything.addItem({
-        title: frontmatter.title,
-        id: `${APP_URL}${url}`,
-        link: `${APP_URL}${url}`,
-        description: frontmatter.description || excerpt,
-        content: html,
-        date: frontmatter.publishedAt,
-        author,
-      })
-    )
+  feedWithEverything.items = [...notesItems, ...articlesItems].toSorted(compareItemDate)
 
-  writeFileSync(path.join(config.outDir, 'feed.xml'), feedWithEverything.rss2())
+  writeFeed('feed', feedWithEverything)
 
-  /**
-   * NOTES ONLY
-   */
+  // Feed 2: notes
 
-  const feedWithNotesOnly = new Feed({
-    docs: 'https://www.rssboard.org/rss-specification',
-    link: APP_URL,
+  const feedWithNotes = new Feed({
     title: 'Mehdi’s notes',
     description: 'A chronological gathering of… notes.',
-    language: config.site.lang,
-    // image: 'https://blog.mehdi.cc/file.png',
-    // favicon: `${APP_URL}/favicon.ico`,
-    copyright: 'Copyright © 2023-present, Mehdi Merah',
     feed: `${APP_URL}/feed-notes-only.xml`,
-    ttl: 2880, // 1 day,
-  });
+    ...feedOptions,
+  })
 
-  content
-    .filter(isNote)
-    .forEach(({ url, excerpt, frontmatter, html }) =>
-      feedWithNotesOnly.addItem({
-        title: frontmatter.title,
-        id: `${APP_URL}${url}`,
-        link: `${APP_URL}${url}`,
-        description: frontmatter.description || excerpt,
-        content: html,
-        date: frontmatter.publishedAt,
-        author,
-      })
-    )
+  feedWithNotes.items = notesItems
 
-  writeFileSync(path.join(config.outDir, 'feed-notes-only.xml'), feedWithNotesOnly.rss2())
+  writeFeed('feed-notes-only', feedWithNotes)
 
-  /**
-   * ARTICLES ONLY
-   */
+  // Feed 3: articles
 
-  const feedWithArticlesOnly = new Feed({
-    docs: 'https://www.rssboard.org/rss-specification',
-    link: APP_URL,
+  const feedWithArticles = new Feed({
     title: 'Mehdi’s articles',
     description: 'A chronological gathering of… articles.',
-    language: config.site.lang,
-    // image: 'https://blog.mehdi.cc/file.png',
-    // favicon: `${APP_URL}/favicon.ico`,
-    copyright: 'Copyright © 2023-present, Mehdi Merah',
     feed: `${APP_URL}/feed-articles-only.xml`,
-    ttl: 2880, // 1 day,
-  });
+    ...feedOptions,
+  })
 
-  content
-    .filter(isArticle)
-    .forEach(({ url, excerpt, frontmatter, html }) =>
-      feedWithArticlesOnly.addItem({
-        title: frontmatter.title,
-        id: `${APP_URL}${url}`,
-        link: `${APP_URL}${url}`,
-        description: frontmatter.description || excerpt,
-        content: html,
-        date: frontmatter.publishedAt,
-        author,
-      })
-    )
+  feedWithArticles.items = articlesItems
 
-  writeFileSync(path.join(config.outDir, 'feed-articles-only.xml'), feedWithArticlesOnly.rss2())
+  writeFeed('feed-articles-only', feedWithArticles)
 
-  /**
-   * ARTICLES EXCERPTS ONLY
-   */
+  // Feed 4: articles excerpts
 
-  const feedWithArticlesExcerptOnly = new Feed({
-    docs: 'https://www.rssboard.org/rss-specification',
-    link: APP_URL,
+  const feedWithArticlesExcerpts = new Feed({
     title: 'Mehdi’s articles (excerpts only)',
     description: 'Excerpt of my articles.',
-    language: config.site.lang,
-    // image: 'https://blog.mehdi.cc/file.png',
-    // favicon: `${APP_URL}/favicon.ico`,
-    copyright: 'Copyright © 2023-present, Mehdi Merah',
     feed: `${APP_URL}/feed-articles-excerpts-only.xml`,
-    ttl: 2880, // 1 day,
-  });
+    ...feedOptions,
+  })
 
-  content
-    .filter(isArticle)
-    .forEach(({ url, excerpt, frontmatter, html }) =>
-      feedWithArticlesExcerptOnly.addItem({
-        title: frontmatter.title,
-        id: `${APP_URL}${url}`,
-        link: `${APP_URL}${url}`,
-        description: frontmatter.description || excerpt,
-        content: excerpt,
-        date: frontmatter.publishedAt,
-        author,
-      })
-    )
+  feedWithArticlesExcerpts.items = articlesItemsExcerptOnly
 
-  writeFileSync(path.join(config.outDir, 'feed-articles-excerpts-only.xml'), feedWithArticlesExcerptOnly.rss2())
+  writeFeed('feed-articles-excerpts-only', feedWithArticlesExcerpts)
 
-  /**
-   * ARTICLES EXCERPTS + NOTES
-   */
+  // Feed 5: articles excerpts and notes
 
-  const feedWithNotesAndArticlesExcerpts = new Feed({
-    docs: 'https://www.rssboard.org/rss-specification',
-    link: APP_URL,
+  const feedWithArticlesExcerptsAndNotes = new Feed({
     title: 'Mehdi’s light feed',
     description: 'Articles excerpts and notes.',
-    language: config.site.lang,
-    // image: 'https://blog.mehdi.cc/file.png',
-    // favicon: `${APP_URL}/favicon.ico`,
-    copyright: 'Copyright © 2023-present, Mehdi Merah',
     feed: `${APP_URL}/feed-articles-excerpts-and-notes.xml`,
-    ttl: 2880, // 1 day,
-  });
+    ...feedOptions,
+  })
 
-  content
-    .forEach(({ url, excerpt, frontmatter, html }) =>
-      feedWithNotesAndArticlesExcerpts.addItem({
-        title: frontmatter.title,
-        id: `${APP_URL}${url}`,
-        link: `${APP_URL}${url}`,
-        description: frontmatter.description || excerpt,
-        content: isNote({ url }) ? html : excerpt,
-        date: frontmatter.publishedAt,
-        author,
-      })
-    )
+  feedWithArticlesExcerptsAndNotes.items = [...notesItems, ...articlesItemsExcerptOnly].toSorted(compareItemDate)
 
-  writeFileSync(path.join(config.outDir, 'feed-articles-excerpts-and-notes.xml'), feedWithNotesAndArticlesExcerpts.rss2())
+  writeFeed('feed-articles-excerpts-and-notes', feedWithArticlesExcerptsAndNotes)
 }
