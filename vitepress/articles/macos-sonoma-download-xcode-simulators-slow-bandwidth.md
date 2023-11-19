@@ -81,5 +81,5 @@ Simulators are handy, robust and come with a good set of features, like the abil
     <img src="/content/ios-simulator-safari-light.png" alt="Simulator showing an iPhone SE (3rd generation) using iOS 17.0. Next to its window is Safari macOS developer tools, with the element and styles panes visible." style="margin-inline: auto;" />
 </picture>
 
-View this screenshot in a new tab in light mode ([WebP](/content/ios-simulator-safari-light.webp), [PNG](/content/ios-simulator-safari-light.png)) or in dark mode ([WebP](/content/ios-simulator-safari-dark.webp), [PNG](/content/ios-simulator-safari-dark.png)).
+View this screenshot in light mode ([WebP](/content/ios-simulator-safari-light.webp), [PNG](/content/ios-simulator-safari-light.png)) or in dark mode ([WebP](/content/ios-simulator-safari-dark.webp), [PNG](/content/ios-simulator-safari-dark.png)).
 :::
