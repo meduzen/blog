@@ -9,7 +9,7 @@ const APP_URL = `https://blog.mehdi.cc`
 
 /** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
-  const feedOptions = baseFeedOptions()
+  const feedOptions = baseFeedOptions(config)
 
   // Load content and turn it into feed items.
 

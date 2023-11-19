@@ -25,7 +25,7 @@ export const compareItemDate = (a, b) => new Date(b.date) - new Date(a.date)
  * @returns {FeedOptions}
  */
 export const baseFeedOptions = siteConfig => {
-  if (!siteConfig) {
+  if (!config) {
     config = { ...siteConfig }
   }
 
