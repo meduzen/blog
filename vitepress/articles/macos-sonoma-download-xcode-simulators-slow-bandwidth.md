@@ -26,10 +26,10 @@ Yes! If you are doing web development and wonder if you should install the iOS S
 On macOS, you would normally open Xcode and hit the “get” button from _Settings_ / _Platforms_.
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="../public/content/xcode-settings-platforms-dark.webp" type="image/webp"/>
-    <source media="(prefers-color-scheme: dark)" srcset="../public/content/xcode-settings-platforms-dark.png" type="image/png"/>
-    <source media="(prefers-color-scheme: light)" srcset="../public/content/xcode-settings-platforms-light.webp" type="image/webp"/>
-    <img src="../public/content/xcode-settings-platforms-light.png" alt="Xcode platforms settings, showing available platforms (macOS, iOS, watchOS, tvOS)." style="margin-inline: auto;" />
+    <source media="(prefers-color-scheme: dark)" srcset="/content/xcode-settings-platforms-dark.webp" type="image/webp"/>
+    <source media="(prefers-color-scheme: dark)" srcset="/content/xcode-settings-platforms-dark.png" type="image/png"/>
+    <source media="(prefers-color-scheme: light)" srcset="/content/xcode-settings-platforms-light.webp" type="image/webp"/>
+    <img src="/content/xcode-settings-platforms-light.png" alt="Xcode platforms settings, showing available platforms (macOS, iOS, watchOS, tvOS)." style="margin-inline: auto;" />
 </picture>
 
 My connexion is slow and peak at 21 Mbps (2.6 MB/s.), and downloading from that menu is more often in the 0.1 to 1 MB/s range, and even worse: it will fail after around 2 hours **with no possibility to resume the failing download**!
@@ -65,21 +65,21 @@ One of the benefits of using a Macbook is that you get access to Simulators for 
 Simulators allow you to test how your websites or in-development native apps behave on any iPhone and iPad without the need to purchase the devices. Using Simulators doesn’t replace the experience of having your fingers on the real devices, but they are very good and you should definitely use them.
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="../public/content/simulator-mehdi-blog-dark.webp" type="image/webp"/>
-    <source media="(prefers-color-scheme: dark)" srcset="../public/content/simulator-mehdi-blog-dark.png" type="image/png"/>
-    <source media="(prefers-color-scheme: light)" srcset="../public/content/simulator-mehdi-blog-light.webp" type="image/webp" />
-    <img src="../public/content/simulator-mehdi-blog-light.png" alt="Simulator showing an iPhone SE (3rd generation) using iOS 17.0. The About page of Mehdi Merah’s blog is displayed in Safari." width="400" style="margin-inline: auto;" />
+    <source media="(prefers-color-scheme: dark)" srcset="/content/simulator-mehdi-blog-dark.webp" type="image/webp"/>
+    <source media="(prefers-color-scheme: dark)" srcset="/content/simulator-mehdi-blog-dark.png" type="image/png"/>
+    <source media="(prefers-color-scheme: light)" srcset="/content/simulator-mehdi-blog-light.webp" type="image/webp" />
+    <img src="/content/simulator-mehdi-blog-light.png" alt="Simulator showing an iPhone SE (3rd generation) using iOS 17.0. The About page of Mehdi Merah’s blog is displayed in Safari." width="400" style="margin-inline: auto;" />
 </picture>
 
 Simulators are handy, robust and come with a good set of features, like the ability to use Safari macOS developer tools to inspect any Safari iOS tab. There’s an Apple WWDC 23 video about it ([from 6:42](https://developer.apple.com/videos/play/wwdc2023/10262?time=402) to 8:45).
 
 :::details Screenshot of Safari iOS inspected from macOS.
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="../public/content/ios-simulator-safari-dark.webp" type="image/webp"/>
-    <source media="(prefers-color-scheme: dark)" srcset="../public/content/ios-simulator-safari-dark.png" type="image/png"/>
-    <source media="(prefers-color-scheme: light)" srcset="../public/content/ios-simulator-safari-light.webp" type="image/webp"/>
-    <img src="../public/content/ios-simulator-safari-light.png" alt="Simulator showing an iPhone SE (3rd generation) using iOS 17.0. Next to its window is Safari macOS developer tools, with the element and styles panes visible." style="margin-inline: auto;" />
+    <source media="(prefers-color-scheme: dark)" srcset="/content/ios-simulator-safari-dark.webp" type="image/webp"/>
+    <source media="(prefers-color-scheme: dark)" srcset="/content/ios-simulator-safari-dark.png" type="image/png"/>
+    <source media="(prefers-color-scheme: light)" srcset="/content/ios-simulator-safari-light.webp" type="image/webp"/>
+    <img src="/content/ios-simulator-safari-light.png" alt="Simulator showing an iPhone SE (3rd generation) using iOS 17.0. Next to its window is Safari macOS developer tools, with the element and styles panes visible." style="margin-inline: auto;" />
 </picture>
 
-View this screenshot in a new tab in light mode ([WebP](../public/content/ios-simulator-safari-light.webp), [PNG](../public/content/ios-simulator-safari-light.png)) or in dark mode ([WebP](../public/content/ios-simulator-safari-dark.webp), [PNG](../public/content/ios-simulator-safari-dark.png)).
+View this screenshot in a new tab in light mode ([WebP](/content/ios-simulator-safari-light.webp), [PNG](/content/ios-simulator-safari-light.png)) or in dark mode ([WebP](/content/ios-simulator-safari-dark.webp), [PNG](/content/ios-simulator-safari-dark.png)).
 :::
