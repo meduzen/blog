@@ -134,7 +134,7 @@ export async function rss(config) {
   const feedWithArticlesExcerptOnly = new Feed({
     docs: 'https://www.rssboard.org/rss-specification',
     link: APP_URL,
-    title: 'Mehdi’s articles',
+    title: 'Mehdi’s articles (excerpts only)',
     description: 'Excerpt of my articles.',
     language: config.site.lang,
     // image: 'https://blog.mehdi.cc/file.png',
