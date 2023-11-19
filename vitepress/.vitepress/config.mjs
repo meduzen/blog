@@ -16,7 +16,11 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'color-scheme', content: 'dark light only' }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.xml` }]
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.xml` }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-notes-only.xml` }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-only.xml` }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-excerpts-only.xml` }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-excerpts-and-notes.xml` }],
   ],
 
   // add temporary stupid tracking
