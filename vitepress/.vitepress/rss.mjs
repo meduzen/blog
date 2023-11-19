@@ -9,14 +9,22 @@ const APP_URL = `https://blog.mehdi.cc`
 
 /** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
+  const content = (await createContentLoader(['articles/*.md', 'notes/*.md'], { excerpt: true, render: true }).load())
+    .filter(isPublished)
+    .toSorted(comparePublicationDate)
+
+  /**
+   * FULL CONTENT
+   */
+
   /**
    * https://www.rssboard.org/rss-profile
    * https://github.com/jpmonette/feed
    */
-  const feed = new Feed({
+  const feedWithEverything = new Feed({
     docs: 'https://www.rssboard.org/rss-specification',
-    link: APP_URL + 'link',
-    title: config.site.title,
+    link: APP_URL,
+    title: 'Mehdi’s notes and articles',
     description: config.site.description,
     language: config.site.lang,
     // image: 'https://blog.mehdi.cc/file.png',
@@ -26,11 +34,9 @@ export async function rss(config) {
     ttl: 2880, // 1 day,
   });
 
-  (await createContentLoader(['articles/*.md', 'notes/*.md'], { excerpt: true, render: true }).load())
-    .filter(isPublished)
-    .toSorted(comparePublicationDate)
+  content
     .forEach(({ url, excerpt, frontmatter, html }) =>
-      feed.addItem({
+      feedWithEverything.addItem({
         title: frontmatter.title,
         id: `${APP_URL}${url}`,
         link: `${APP_URL}${url}`,
@@ -40,10 +46,10 @@ export async function rss(config) {
         author: [{
           name: 'Mehdi Merah',
           link: 'https://mehdi.cc',
-          email: ' ', // hack, otherwise <author> is missing in RSS
+          email: 'hi@mehdi.cc',
         }],
       })
     )
 
-  writeFileSync(path.join(config.outDir, 'feed.xml'), feed.rss2())
+  writeFileSync(path.join(config.outDir, 'feed.xml'), feedWithEverything.rss2())
 }
