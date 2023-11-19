@@ -4,20 +4,27 @@ import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
 import { comparePublicationDate, isPublished } from './utils/frontmatter.mjs'
 
+/** @typedef {import('vitepress').ContentData} ContentData */
+
 /** @todo: should come from .env */
 const APP_URL = `https://blog.mehdi.cc`
 
 /**
- * @param {import('vitepress').ContentData} content
+ * @param {ContentData} content
  * @param {string} type
  */
-const isContentType = (content, type) => content.url.startsWith(`/${type}s/`)
+const isContentType = ({ url }, type) => url.startsWith(`/${type}s/`)
 
+/** @param {ContentData} content */
 const isArticle = content => isContentType(content, 'article')
+
+/** @param {ContentData} content */
 const isNote = content => isContentType(content, 'note')
 
 /** @param {import('vitepress').SiteConfig} config */
 export async function rss(config) {
+
+  /** @type {ContentData[]} */
   const content = (await createContentLoader(['articles/*.md', 'notes/*.md'], { excerpt: true, render: true }).load())
     .filter(isPublished)
     .toSorted(comparePublicationDate)
