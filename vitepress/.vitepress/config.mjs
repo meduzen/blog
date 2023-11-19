@@ -48,7 +48,7 @@ export default defineConfig({
       { text: 'Articles', link: '/articles' },
       { text: 'Notes', link: '/notes' },
       { text: 'About', link: '/about' },
-      { text: 'RSS feed', link: '/feed.xml' },
+      { text: 'RSS feeds', link: '/about#feeds' },
     ],
 
     // sidebar: [
