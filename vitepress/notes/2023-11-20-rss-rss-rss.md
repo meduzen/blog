@@ -9,9 +9,9 @@ excerpt: RSS feeds were my first game changer as a consumer of the web.
 
 <datetime :date="$frontmatter.publishedAt" formatter="longdate"/>
 
-In the early 2000’s, I used to regularly visit many videogames websites. Browsing them one by one was time-consuming, so imagine my happiness when I stumbled upon that cool tech with an equally cool name: [Really Simple Syndication (RSS)](https://developer.mozilla.org/en-US/docs/Glossary/RSS).
+In the early 2000’s, I used to regularly visit a lot of videogames websites. Browsing them one by one was time-consuming, so imagine my happiness when I stumbled upon that cool tech with an equally cool name: [Really Simple Syndication (RSS)](https://developer.mozilla.org/en-US/docs/Glossary/RSS).
 
-Instead of wandering on the internet website by website, I could now use one software to automatically retrieve the news and read them offline. It was the first **game changer** in how I consume the web (using [Feedreader](https://feedreader.com/screenshots.php), maybe?), to the point I ended up reading the whole [spec](https://www.rssboard.org/rss-specification) and coding a RSS feed generator in PHP.
+Instead of wandering on the internet website by website, I could now use one software to automatically retrieve the news and read them offline. It was the first **game changer** in how I consume the web (using [Feedreader](https://feedreader.com/screenshots.php), maybe?), to the point I ended up reading the whole [RSS spec](https://www.rssboard.org/rss-specification) and coding a feed generator in PHP.
 
 This blog now has [multiple flavors of RSS feeds](../about.md#feeds): big ones with all the content, lightweight ones with only excerpts or notes. I think it’s best to let you decide how you want to consume that space.
 
