@@ -2,7 +2,7 @@
 title: My first game changer
 description: RSS feeds variations for all tastes and deviances
 publishedAt: 2023-11-20
-excerpt: Years later, I still think that [RSS feeds are a pillar of the web]().
+excerpt: Years later, I still think that [RSS feeds are a pillar of the web](). Initially this note was about RSS feeds on my blog, but it sidetracked to mention decentralization and Aaron Schwartz.
 ---
 
 # My first game changer
