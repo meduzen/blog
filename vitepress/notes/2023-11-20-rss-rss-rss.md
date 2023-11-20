@@ -2,7 +2,7 @@
 title: My first game changer
 description: RSS feeds variations for all tastes and deviances
 publishedAt: 2023-11-20
-excerpt: RSS feeds were my first game changer as a consumer of the web.
+excerpt: Years later, I still think that [RSS feeds are a pillar of the web]().
 ---
 
 # My first game changer
