@@ -15,7 +15,7 @@
     "@size-limit/preset-app": "^11",
     "feed": "^4.2.2",
     "size-limit": "^11",
-    "vitepress": "^1.0.0-rc.22"
+    "vitepress": "^1.0.0-rc.31"
   },
   "dependencies": {
     "core-js-pure": "^3.33.2",
