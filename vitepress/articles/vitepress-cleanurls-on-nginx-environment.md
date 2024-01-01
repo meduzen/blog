@@ -101,7 +101,7 @@ server {
         # try to serve the first existing file among the list: 
         # `foo/bar`, `foo/bar.html` or `foo/bar/index.html`. 
         # Otherwise answer with a 404 code.
-        try_files $uri $uri.html $uri/ =404; // [!code hl]
+        try_files $uri $uri.html $uri/ =404; # [!code hl]
     }
 }
 ```
@@ -136,9 +136,9 @@ server {
     # and other things…
 
     location / {
-        # When the HTTP status code is 404, answer with the `/404.html` file. // [!code ++]
-        error_page 404 /404.html; // [!code ++]
-        // [!code ++]
+        # When the HTTP status code is 404, answer with the `/404.html` file. # [!code ++]
+        error_page 404 /404.html; # [!code ++]
+        # [!code ++]
         try_files $uri $uri.html $uri/ =404;
     }
 }
@@ -152,9 +152,9 @@ To avoid the [403](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403)
 server {
     index index.html;
     # and other things…
-    // [!code ++]
-    # Remove the trailing slash (permanent 301 redirect). // [!code ++]
-    rewrite ^(.+)/$ $1 permanent; // [!code ++]
+    # [!code ++]
+    # Remove the trailing slash (permanent 301 redirect). # [!code ++]
+    rewrite ^(.+)/$ $1 permanent; # [!code ++]
 
     location / {
         error_page 404 /404.html;
@@ -178,16 +178,16 @@ server {
     # other things…
 
     rewrite ^(.+)/$ $1 permanent;
-    // [!code ++]
-    # Remove the trailing `index.html`. // [!code ++]
-    if ($request_uri ~ ^/(.*)index\.html(\?|$)) { // [!code ++]
-        return 301 /$1; // [!code ++]
-    } // [!code ++]
-    // [!code ++]
-    # Remove the trailing `.html`. // [!code ++]
-    if ($request_uri ~ ^/(.*)\.html(\?|$)) { // [!code ++]
-        return 301 /$1; // [!code ++]
-    } // [!code ++]
+    # [!code ++]
+    # Remove the trailing `index.html`. # [!code ++]
+    if ($request_uri ~ ^/(.*)index\.html(\?|$)) { # [!code ++]
+        return 301 /$1; # [!code ++]
+    } # [!code ++]
+    # [!code ++]
+    # Remove the trailing `.html`. # [!code ++]
+    if ($request_uri ~ ^/(.*)\.html(\?|$)) { # [!code ++]
+        return 301 /$1; # [!code ++]
+    } # [!code ++]
 
     location / {
         error_page 404 /404.html;
