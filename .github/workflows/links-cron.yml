@@ -18,11 +18,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v1.8.0
+        uses: lycheeverse/lychee-action@v1.9.2
         with:
           args: 'https://blog.mehdi.cc'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Create issue
         if: env.lychee_exit_code != 0
