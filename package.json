@@ -18,7 +18,7 @@
     "vitepress": "^1.0.0-rc.34"
   },
   "dependencies": {
-    "core-js-pure": "^3.33.2",
+    "core-js-pure": "^3.35.1",
     "datetime-attribute": "^1.3.2"
   }
 }
