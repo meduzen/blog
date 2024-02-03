@@ -11,6 +11,11 @@ The following websites can provide tips and guidance on how to contribute to ope
 
 Please do your best to communicate the necessary context so your contribution can be easily understood by other persons, and don’t be afraid if you struggle with English or if you are not sure about what you are doing.
 
+## Markdown flavor
+
+Supported by Vitepress, this blog uses an [extended flavor of Markdown](https://vitepress.dev/guide/markdown). Here are the rules:
+- [Don’t use](https://blog.mehdi.cc/articles/github-alerts-markdown-syntax) [GitHub syntax for alerts](https://vitepress.dev/guide/markdown#github-flavored-alerts): [Vitepress custom containers](https://vitepress.dev/guide/markdown#custom-containers) are a better fit.
+
 ## Bug reports
 
 When reporting a bug, here are the informations you can provide to help other persons to help you:
