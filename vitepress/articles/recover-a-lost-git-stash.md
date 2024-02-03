@@ -69,25 +69,25 @@ Date:   {stash date with timezone}
 
 ::: details johnwait’s comment
 
-On Windows, in a good old command window (your usual `cmd.exe`), step 1. could be translated to:
-
-`for /f "tokens=3" %a in ('git fsck --unreachable ^| find "commit"') do @git log --merges --no-walk %a`
-
-If your Git speaks français, and you're one to choose the more complicated path, you could use something like:
-
-`for /f "tokens=1,2,3,4" %a in ('git fsck --unreachable ^| find "commit"') do @if "%c"=="inatteignable" (@git log --merges --no-walk %d) else (@git log --merges --no-walk %c)`
-
-or, really, keep it simple with `alias git='LANG=en_GB git'` instead.
-
-**Bonus**
-
-For PowerShell aficionados, here's a command that should work regardless of your Git's locale (well, as long as a commit is still referred to as `commit`):
-
-`(git fsck --unreachable | Select-String "commit") -split '\s+' |
+> On Windows, in a good old command window (your usual `cmd.exe`), step 1. could be translated to:
+>
+> `for /f "tokens=3" %a in ('git fsck --unreachable ^| find "commit"') do @git log --merges --no-walk %a`
+>
+> If your Git speaks français, and you're one to choose the more complicated path, you could use something like:
+>
+> `for /f "tokens=1,2,3,4" %a in ('git fsck --unreachable ^| find "commit"') do @if "%c"=="inatteignable" (@git log --merges --no-walk %d) else (@git log --merges --no-walk %c)`
+>
+> or, really, keep it simple with `alias git='LANG=en_GB git'` instead.
+>
+> **Bonus**
+>
+> For PowerShell aficionados, here's a command that should work regardless of your Git's locale (well, as long as a commit is still referred to as `commit`):
+>
+> `(git fsck --unreachable | Select-String "commit") -split '\s+' |
 Select-String -pattern "^[0-9a-fA-F]{40}$" |
 ForEach-Object { git log --merges --no-walk $_ }`
-
-(Really useful post btw!)
+>
+> (Really useful post btw!)
 :::
 
 ## Step 2: send a lost stash back where it comes from
