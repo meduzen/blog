@@ -7,7 +7,7 @@ excerpt: I loved the _GitHub Markdown syntax for alerts_ until it [landed in Vit
 ---
 
 ::: info Article updated on <time datetime="2024-02-04">4 February 2024</time>
-This article has been updated since its first publication. [Read all about it](../articles/github-alerts-markdown-syntax.md#updates-to-this-article).
+[Read all about the changes](../articles/github-alerts-markdown-syntax.md#updates-to-this-article).
 :::
 
 I had multiple options for the title of this note, from being neutral to opinionated, or even pedantic. I deliberately kept [the worst](https://meyerweb.com/eric/comment/chech.html).
