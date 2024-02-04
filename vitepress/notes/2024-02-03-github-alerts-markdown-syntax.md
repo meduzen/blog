@@ -2,7 +2,7 @@
 title: The GitHub Markdown syntax for alerts sucks
 description: I’ve decided to not use it, it’s confusing and poorly designed.
 publishedAt: 2024-02-03
-excerpt: The [GitHub Markdown syntax for alerts sucks]().
+excerpt: The [GitHub Markdown syntax for alerts sucks](). (**Article updated the next day**.)
 ---
 
 # The GitHub Markdown syntax for alerts sucks
