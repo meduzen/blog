@@ -94,6 +94,6 @@ When using utility classes along semantic classes in HTML, I separate them using
 <ul class="eventsList | flex-center f700">
 ```
 
-(Yes, I care about readability up to that level if detail. And I did not invent that technique, by the way.)
+(Yes, I care about readability up to that level of detail. And I did not invent that technique, by the way.)
 
 Also if you’re wondering what’s that `@media (--reduced-motion)` syntax from the last example, it’s called [Custom Media Queries](https://github.com/meduzen/--media.scss/blob/main/docs/custom-media-queries.md) and you can [use it](https://github.com/meduzen/canwe/tree/47541f6e6f104e8b8a8fdc0a8668edb0da5bd08a/src/css/media-queries) since years thanks to the PostCSS [`postcss-preset-env` plugin](https://preset-env.cssdb.org/). I can definitely say PostCSS is the most important tool for CSS: I’ve always coupled Sass and PostCSS together, and last year I’ve started to [ditch Sass in favor of only PostCSS](https://github.com/meduzen/canwe/pull/138), but that’s another story.
