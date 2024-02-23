@@ -1,8 +1,12 @@
 import { defineConfig } from 'vitepress'
 import { rss } from './rss.mjs'
+import { getOpenGraphTags } from './utils/pagedata.mjs'
+import { metaName, metaProperty } from './utils/head.mjs'
 
 const APP_URL = `https://blog.mehdi.cc`
 const APP_TITLE = 'Mehdi’s Notes'
+
+export const rssTag = path => ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/${path}` }]
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -15,31 +19,38 @@ export default defineConfig({
   buildEnd: rss,
 
   head: [
-    ['meta', { name: 'color-scheme', content: 'dark light only' }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed.xml` }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-notes-only.xml` }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-only.xml` }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-excerpts-only.xml` }],
-    ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-excerpts-and-notes.xml` }],
+    // Color schemes
+    metaName('color-scheme', 'dark light only'),
+
+    // RSS
+    rssTag('feed.xml'),
+    rssTag('feed-notes-only.xml'),
+    rssTag('feed-articles-only.xml'),
+    rssTag('feed-articles-excerpts-only.xml'),
+    rssTag('feed-articles-excerpts-and-notes.xml'),
+
+    // Open Graph
+    metaProperty('og:site_name', APP_TITLE),
+    metaProperty('og:locale', 'en_GB'),
   ],
+
+  // per page `<head>` entries
+  async transformHead(context) {
+    const canonicalUrl = `${APP_URL}/${context.pageData.filePath.replace('.md', '')}`
+
+    return [
+      metaName('keywords', context.pageData.frontmatter.tags), // @todo: add general website keyword
+      ['link', { rel: 'canonical', href: canonicalUrl }],
+      metaProperty('og:url', canonicalUrl),
+      ...getOpenGraphTags(context.pageData),
+    ]
+  },
 
   // add temporary stupid tracking
   transformHtml: async code => code.replace(
     '\n  </body>\n</html>',
     '<img class="visually-hidden" src="https://matomo.mehdi.cc/piwik.php?idsite=4&amp;rec=1" style="border:0" alt=""></body>\n</html>'
   ),
-
-  vite: {
-    ssr: {
-      /**
-       * Prevent “module not found” error. Solution from
-       * https://github.com/vuejs/vitepress/issues/2832#issuecomment-1689498631
-       * or any search using `noExternal` on Vitepress and Vite repos.
-       * @todo: Shouldn’t be needed on Vite 5.
-       */
-      noExternal: ['datetime-attribute'],
-    },
-  },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
