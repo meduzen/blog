@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { rss } from './rss.mjs'
+import { getOpenGraphTags } from './utils/pagedata.mjs'
 import { metaName, metaProperty } from './utils/head.mjs'
 
 const APP_URL = `https://blog.mehdi.cc`
@@ -41,6 +42,7 @@ export default defineConfig({
       metaName('keywords', context.pageData.frontmatter.tags), // @todo: add general website keyword
       ['link', { rel: 'canonical', href: canonicalUrl }],
       metaProperty('og:url', canonicalUrl),
+      ...getOpenGraphTags(context.pageData),
     ]
   },
 
