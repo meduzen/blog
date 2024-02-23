@@ -30,6 +30,7 @@ export default defineConfig({
 
     // Open Graph
     metaProperty('og:site_name', APP_TITLE),
+    metaProperty('og:locale', 'en_GB'),
   ],
 
   // add temporary stupid tracking
