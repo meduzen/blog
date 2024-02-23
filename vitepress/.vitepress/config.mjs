@@ -33,6 +33,17 @@ export default defineConfig({
     metaProperty('og:locale', 'en_GB'),
   ],
 
+  // per page `<head>` entries
+  async transformHead(context) {
+    const canonicalUrl = `${APP_URL}/${context.pageData.filePath.replace('.md', '')}`
+
+    return [
+      metaName('keywords', context.pageData.frontmatter.tags), // @todo: add general website keyword
+      ['link', { rel: 'canonical', href: canonicalUrl }],
+      metaProperty('og:url', canonicalUrl),
+    ]
+  },
+
   // add temporary stupid tracking
   transformHtml: async code => code.replace(
     '\n  </body>\n</html>',
