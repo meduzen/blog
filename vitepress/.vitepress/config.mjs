@@ -22,6 +22,7 @@ export default defineConfig({
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-excerpts-only.xml` }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: APP_TITLE, href: `${APP_URL}/feed-articles-excerpts-and-notes.xml` }],
   ],
+    ['meta', { property: 'og:site_name', content: APP_TITLE }],
 
   // add temporary stupid tracking
   transformHtml: async code => code.replace(
