@@ -1,3 +1,4 @@
+# microdata
 ^http:\/\/schema.org\/.*
 
 # always answer 403 no matter the online availability
