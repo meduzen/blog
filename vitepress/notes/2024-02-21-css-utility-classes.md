@@ -44,7 +44,7 @@ Again, I know my stuff around CSS. Everyone their path. Like for everything in w
 
 ## Bonus
 
-Since we are talking about utility class, here are some I often use:
+Since we are talking about utility classes, here are some I often use:
 
 ```css
 /* Center the children of a flex container. */
