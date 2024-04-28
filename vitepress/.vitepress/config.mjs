@@ -35,14 +35,21 @@ export default defineConfig({
   ],
 
   // per page `<head>` entries
-  async transformHead(context) {
-    const canonicalUrl = `${APP_URL}/${context.pageData.filePath.replace('.md', '')}`
+  async transformHead({ pageData }) {
+    const keywordsMeta = metaName('keywords', pageData.frontmatter.tags) // @todo: add general website keyword
+
+    if (pageData.title == '404') { return keywordsMeta }
+
+    // remove trailing `index.md` or `.md`
+    const path = pageData.filePath.replace(/((index)?\.md)$/, '')
+
+    const canonicalUrl = `${APP_URL}/${path}`.replace(/\/$/, '') // remove trailing `/`
 
     return [
-      metaName('keywords', context.pageData.frontmatter.tags), // @todo: add general website keyword
+      keywordsMeta,
       ['link', { rel: 'canonical', href: canonicalUrl }],
       metaProperty('og:url', canonicalUrl),
-      ...getOpenGraphTags(context.pageData),
+      ...getOpenGraphTags(pageData),
     ]
   },
 
