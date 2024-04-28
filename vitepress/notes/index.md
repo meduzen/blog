@@ -3,7 +3,7 @@ description: Random notes. In some of them, I announce recently published articl
 ---
 
 <script setup>
-import NotesIndex from './.vitepress/theme/NotesIndex.vue'
+import NotesIndex from '../.vitepress/theme/NotesIndex.vue'
 </script>
 
 # Notes

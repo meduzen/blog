@@ -1,6 +1,6 @@
 import groupBy from "core-js-pure/full/object/group-by"
 import { createContentLoader, createMarkdownRenderer } from 'vitepress'
-import { comparePublicationDate, hasExcerptInFrontmatter, isPublished } from "./.vitepress/utils/frontmatter.mjs"
+import { comparePublicationDate, hasExcerptInFrontmatter, isPublished } from "../.vitepress/utils/frontmatter.mjs"
 
 const mdRenderer = await createMarkdownRenderer()
 

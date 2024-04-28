@@ -1,6 +1,6 @@
 <script setup>
 import { onBeforeMount, reactive } from 'vue'
-import { data as importedData } from '../../notes.data'
+import { data as importedData } from '../../notes/notes.data'
 
 // The following declaration is just to import type autocompletion. 😑
 
