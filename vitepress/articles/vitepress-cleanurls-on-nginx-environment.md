@@ -164,7 +164,7 @@ server {
 ```
 
 ::: warning {id=warning-http-redirect}
-Note that the `permanent` keyword do a [301](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) redirect, which is permanent and might be cached during a very long time by browsers and search engines. If you are not sure about this rewriting rule, consider the `redirect` keyword to get a [302](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302) (temporary) redirect instead of a 301.
+Note that the `permanent` keyword does a [301](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301) redirect, which is permanent and might be cached during a very long time by browsers and search engines. If you are not sure about this rewriting rule, consider the `redirect` keyword to get a [302](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302) (temporary) redirect instead of a 301.
 :::
 
 ### Step 4: redirect `/slug.html` to `/slug`
