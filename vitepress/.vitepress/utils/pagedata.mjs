@@ -53,7 +53,7 @@ export const getOpenGraphTags = pageData => {
   if (pageData.frontmatter.publishedAt) {
     const publicationDate = new Date(pageData.frontmatter.publishedAt)
 
-    metaProperty('article:published_time', datetime(publicationDate, 'datetime'))
+    metaTags.push(metaProperty('article:published_time', datetime(publicationDate, 'datetime')))
   }
 
   return metaTags
