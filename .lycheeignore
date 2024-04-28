@@ -2,4 +2,5 @@
 ^http:\/\/schema.org\/.*
 
 # always answer 403 no matter the online availability
-https:\/\/www.reddit.com\/r\/engineering\/comments\/jquuls\/why_arent_iso_standards_free\/
+^https:\/\/stackoverflow.com\/.*
+^https:\/\/www.reddit.com\/.*
