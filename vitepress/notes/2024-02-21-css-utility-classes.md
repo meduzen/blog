@@ -38,7 +38,7 @@ So, these days, it’s about FailWind: about [its marketing and promises](https:
 - FailWind class naming is [not CSS friendly](https://github.com/tailwindlabs/tailwindcss/issues/413) [nor predictable](https://mastodon.social/@HTeuMeuLeu/111957326389259598).
 - Adding dark mode [bloats the CSS payload](https://twitter.com/meduzen/status/1634517215834718208).
 
-(It was 6 years ago, I don’t know today, and I don’t know any front-end developer using it or any other CSS framework.)
+(It was 6 years ago, I don’t know today, and I don’t know any front-end developer using CSS frameworks.)
 
 Again, I know my stuff around CSS. Everyone their path. Like for everything in web development, there are a lot of fashions and techniques to write and maintain CSS: this diversity is great, but it can be hard to navigate. Each time you decide to go for a tool or technology, there’s a learning curve for its adoption, its in-depth usage and its removal. The time you will take for this is time you can also decide to invest in understanding and learning the fundamentals.
 
@@ -67,7 +67,8 @@ Since we are talking about utility classes, here are some I often use:
 .f400 { font-weight: 400; }
 .f700 { font-weight: 700; }
 
-/* Limit motion based on user preference.
+/**
+ * Limit motion based on user preference.
  *
  * https://toot.cafe/@tomayac/110989258569274871
  */
@@ -88,12 +89,12 @@ Since we are talking about utility classes, here are some I often use:
 }
 ```
 
-When using utility classes along semantic classes in HTML, I separate them using a pipe (`|`), which increases the readability of the HTML:
+When using utility classes along semantic classes in HTML, I separate them using a pipe (`|`), which increases the readability of the classes sequence:
 
 ```html
 <ul class="eventsList | flex-center f700">
 ```
 
-(Yes, I care about readability up to that level of detail. And I did not invent that technique, by the way.)
+I care about readability up to that level of detail, and I have not invented this technique.
 
-Also if you’re wondering what’s that `@media (--reduced-motion)` syntax from the last example, it’s called [Custom Media Queries](https://github.com/meduzen/--media.scss/blob/main/docs/custom-media-queries.md) and you can [use it](https://github.com/meduzen/canwe/tree/47541f6e6f104e8b8a8fdc0a8668edb0da5bd08a/src/css/media-queries) since years thanks to the PostCSS [`postcss-preset-env` plugin](https://preset-env.cssdb.org/). I can definitely say PostCSS is the most important tool for CSS: I’ve always coupled Sass and PostCSS together, and last year I’ve started to [ditch Sass in favor of only PostCSS](https://github.com/meduzen/canwe/pull/138), but that’s another story.
+Also if you’re wondering what’s that `@media (--reduced-motion)` syntax from the last example, it’s called [Custom Media Queries](https://github.com/meduzen/--media.scss/blob/main/docs/custom-media-queries.md) and you can [use it](https://github.com/meduzen/canwe/tree/47541f6e6f104e8b8a8fdc0a8668edb0da5bd08a/src/css/media-queries) since years thanks to the PostCSS [`postcss-preset-env` plugin](https://preset-env.cssdb.org/). I can definitely say PostCSS is the most important tool for CSS: I’ve always coupled Sass and PostCSS together, and last year I’ve started to [ditch Sass to only keep PostCSS](https://github.com/meduzen/canwe/pull/138), but that’s another story.
