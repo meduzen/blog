@@ -1,4 +1,3 @@
-import groupBy from "core-js-pure/full/object/group-by"
 import { createContentLoader, createMarkdownRenderer } from 'vitepress'
 import { comparePublicationDate, isPublished } from "./.vitepress/utils/frontmatter.mjs"
 
@@ -15,7 +14,6 @@ export default createContentLoader('articles/*.md', {
 
   /** @type {import('vitepress').ContentData[]} */
   transform(articles) {
-    const now = new Date()
 
     // sort articles by date
 
