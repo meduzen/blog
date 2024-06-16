@@ -1,5 +1,9 @@
 import { createContentLoader, createMarkdownRenderer } from 'vitepress'
-import { comparePublicationDate, isPublished } from "./.vitepress/utils/frontmatter.mjs"
+import {
+  comparePublicationDate,
+  isPublished,
+  tagsToArray
+} from "./.vitepress/utils/frontmatter.mjs"
 
 const mdRenderer = await createMarkdownRenderer()
 
@@ -30,7 +34,7 @@ export default createContentLoader('articles/*.md', {
         article.frontmatter.title = mdRenderer.render(article.frontmatter.title)
 
         // convert coma-separated list of tags to array
-        article.frontmatter.tags = (article.frontmatter.tags?.split(',') ?? []).map(tag => tag.trim())
+        article.frontmatter.tags = tagsToArray(article)
 
         // convert Markdown excerpt to HTML
         if ('excerpt' in article.frontmatter) {

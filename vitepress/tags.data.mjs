@@ -1,5 +1,9 @@
 import { createContentLoader } from 'vitepress'
-import { comparePublicationDate, isPublished } from "./.vitepress/utils/frontmatter.mjs"
+import {
+  comparePublicationDate,
+  isPublished,
+  tagsToArray
+} from "./.vitepress/utils/frontmatter.mjs"
 
 export default createContentLoader('articles/*.md', {
   excerpt: true,
@@ -17,15 +21,9 @@ export default createContentLoader('articles/*.md', {
       .filter(isPublished)
       .toSorted(comparePublicationDate)
 
-      // retrieve tags from frontmatter
+      // retrieve tags as an object like `{ tagA: 3, tagB: 1, }`
 
-      .flatMap(article => {
-        return (article.frontmatter.tags?.split(',') ?? [])
-          .map(tag => tag.trim())
-      })
-
-      // turn tags into an object like `{ tagA: 3, tagB: 1, }`.
-
+      .flatMap(tagsToArray)
       .reduce((tags, tag) => {
         tags[tag] = (tags[tag] ?? 0) + 1
         return tags
