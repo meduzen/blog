@@ -1,9 +1,19 @@
+<script>
+class Tag {
+  constructor(tag, count) {
+    this.tag = tag
+    this.count = count
+  }
+}
+</script>
+
 <script setup>
 import { useData } from 'vitepress'
+import { slugify } from '@mdit-vue/shared' // same as Vitepress
 
 const props = defineProps({
   tags: {
-    type: Array[String, Number],
+    type: Array[String, Number, Tag],
     required: false,
     default: undefined,
   },
@@ -19,7 +29,18 @@ if (typeof tags == 'string') {
 <template>
   <ul v-if="tags.length" class="tags">
     <li class="tag" v-for="tag in tags">
-      <Badge class="tag__badge">{{ tag }}</Badge>
+      <a :href="`/tags/${slugify(tag?.tag ?? tag)}`">
+        <Badge class="tag__badge">
+          {{ tag?.tag ?? tag }}
+          <span
+            v-if="tag?.count"
+            class="tag__count"
+            :aria-label="`(count: ${tag.count})`"
+          >
+            {{ tag.count }}
+          </span>
+        </Badge>
+      </a>
     </li>
   </ul>
 </template>
@@ -44,5 +65,19 @@ if (typeof tags == 'string') {
 
 .tag__badge {
   font-size: var(--tag-font-size, 0.85rem);
+}
+
+.tag__count {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.8lh;
+  height: 0.8lh;
+
+  font-size: 85%;
+  font-weight: 700;
+
+  background: var(--vp-c-bg);
+  border-radius: 50%;
 }
 </style>
