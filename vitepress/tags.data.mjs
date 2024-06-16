@@ -13,24 +13,25 @@ export default createContentLoader('articles/*.md', {
 
   /** @type {import('vitepress').ContentData[]} */
   transform(articles) {
+    return articles
 
-    // sort articles by date
+      // sort articles by date
 
-    articles = articles
       .filter(isPublished)
       .toSorted(comparePublicationDate)
 
-    // enrich frontmatter
+      // retrieve tags from frontmatter
 
-    articles
-      .forEach(article => {
-
-        // convert coma-separated list of tags to array
-        article.frontmatter.tags =
-          (article.frontmatter.tags?.split(',') ?? [])
-            .map(tag => tag.trim())
+      .flatMap(article => {
+        return (article.frontmatter.tags?.split(',') ?? [])
+          .map(tag => tag.trim())
       })
 
-    return articles
+      // turn tags into an object like `{ tagA: 3, tagB: 1, }`.
+
+      .reduce((tags, tag) => {
+        tags[tag] = (tags[tag] ?? 0) + 1
+        return tags
+      }, {})
   }
 })

@@ -5,18 +5,7 @@ import Tags from './components/Tags.vue';
 // The following declaration is just to import type autocompletion. 😑
 
 /** @type {Record<string, import('vitepress').ContentData[]>} */
-const data = importedData
-
-// Gather tags.
-
-let tags = data
-  .flatMap(article => article.frontmatter.tags)
-
-  // turn into an object like `{ tagA: 3, tagB: 1, }`.
-  .reduce((tags, tag) => {
-    tags[tag] = (tags[tag] ?? 0) + 1
-    return tags
-  }, {})
+let tags = importedData
 
 /**
  * Convert back to array of tags and turn each tag into an object with count,
