@@ -1,7 +1,7 @@
 ---
 title: Recover a lost Git stash in two steps
 description: A technique to retrieve lost stashes from the limbos.
-tags: git, git-stash
+tags: git, git stash
 publishedAt: 2023-11-15
 outline: [2, 3]
 ---

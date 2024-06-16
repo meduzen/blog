@@ -20,3 +20,11 @@ export const isPublished = content => content.frontmatter.publishedAt < now
  * @param {ContentData} content
  */
 export const hasExcerptInFrontmatter = content => content.frontmatter.excerpt
+
+/**
+ * Convert a coma-separated list of tags to an array of tags.
+ * @param {ContentData} content
+ * @returns {string[]}
+ */
+export const tagsToArray = content => (content.frontmatter.tags?.split(',') ?? [])
+  .map(tag => tag.trim())

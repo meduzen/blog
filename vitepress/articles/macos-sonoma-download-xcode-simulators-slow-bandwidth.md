@@ -1,7 +1,7 @@
 ---
 title: Downloading Xcode Simulators on macOS Sonoma when the bandwidth is slow
 description: It shouldn’t be a pain in the ass, but it is.
-tags: ios-simulator, xcode, safari, macos, apple, bandwidth
+tags: ios simulator, xcode, safari, macos, apple, bandwidth
 publishedAt: 2023-11-18
 outline: [2, 3]
 ---

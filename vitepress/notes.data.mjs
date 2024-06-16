@@ -15,7 +15,6 @@ export default createContentLoader('notes/*.md', {
 
   /** @type {import('vitepress').ContentData[]} */
   transform(notes) {
-    const now = new Date()
 
     // sort notes by date
 
