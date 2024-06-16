@@ -24,6 +24,10 @@
       "path": ["public/notes"]
   },
   {
+      "name": "Tags",
+      "path": ["public/tags"]
+  },
+  {
       "name": "Media for articles and notes",
       "path": ["public/content"]
   },
