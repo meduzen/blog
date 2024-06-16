@@ -3,6 +3,7 @@ import { onBeforeMount, reactive } from 'vue'
 import { useData } from 'vitepress'
 import { data as importedData } from '../../articles.data'
 import Tags from './components/Tags.vue';
+import { slugify } from '@mdit-vue/shared'
 
 // The following declaration is just to import type autocompletion. 😑
 
@@ -11,7 +12,11 @@ let data = reactive(importedData)
 
 const { params } = useData()
 
-data = data.filter(article => article.frontmatter.tags.includes(params.value.tag))
+data = data.filter(article =>
+  article.frontmatter.tags
+    .map(slugify) // compare against slugified tags
+    .includes(params.value.tag)
+)
 
 // Normalize date
 data.forEach(article => {
