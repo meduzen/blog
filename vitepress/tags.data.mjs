@@ -1,17 +1,14 @@
 import { createContentLoader } from 'vitepress'
 import { comparePublicationDate, isPublished } from "./.vitepress/utils/frontmatter.mjs"
 
-/**
- * Load `/articles`:
- * - sort them by date
- * - group them by year
- * - convert `frontmatter.excerpt` Markdown to HTML
- * - add tags to `frontmatter`
- */
 export default createContentLoader('articles/*.md', {
   excerpt: true,
 
-  /** @type {import('vitepress').ContentData[]} */
+  /**
+   * Receive `/articles` and return their tags with count.
+   *
+   * @type {import('vitepress').ContentData[]}
+   */
   transform(articles) {
     return articles
 
