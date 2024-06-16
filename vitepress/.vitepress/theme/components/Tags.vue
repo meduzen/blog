@@ -71,8 +71,16 @@ if (typeof tags == 'string') {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 0.8lh;
-  height: 0.8lh;
+
+  width: 2.6ex;
+  height: 2.6ex;
+
+  /* @todo Usage of `cap` awaiting for feedbacks: https://m.nintendojo.fr/@meduz/112627461086349722 */
+
+  @supports (width: 2cap) {
+    width: 2cap;
+    height: 2cap;
+  }
 
   font-size: 85%;
   font-weight: 700;
