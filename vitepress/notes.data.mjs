@@ -13,7 +13,6 @@ const mdRenderer = await createMarkdownRenderer()
 export default createContentLoader('notes/*.md', {
   excerpt: true,
 
-  /** @type {import('vitepress').ContentData[]} */
   transform(notes) {
 
     // sort notes by date

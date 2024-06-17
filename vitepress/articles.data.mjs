@@ -16,7 +16,6 @@ const mdRenderer = await createMarkdownRenderer()
 export default createContentLoader('articles/*.md', {
   excerpt: true,
 
-  /** @type {import('vitepress').ContentData[]} */
   transform(articles) {
 
     // sort articles by date
