@@ -64,28 +64,17 @@ if (typeof tags == 'string') {
 }
 
 .tag__badge {
-  font-size: var(--tag-font-size, 0.85rem);
+  font-size: var(--tag-font-size, .85rem);
 }
 
 .tag__count {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 2.6ex;
-  height: 2.6ex;
-
-  /* @todo Usage of `cap` awaiting for feedbacks: https://m.nintendojo.fr/@meduz/112627461086349722 */
-
-  @supports (width: 2cap) {
-    width: 2cap;
-    height: 2cap;
-  }
+  padding-inline: .4rem;
 
   font-size: 85%;
   font-weight: 700;
 
   background: var(--vp-c-bg);
-  border-radius: 50%;
+  border-radius: 9em;
+  /* outline: 1px solid transparent; @todo test on Windows high contrast mode */
 }
 </style>
