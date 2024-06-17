@@ -10,8 +10,6 @@ export default createContentLoader('articles/*.md', {
 
   /**
    * Receive `/articles` and return their tags with count.
-   *
-   * @type {import('vitepress').ContentData[]}
    */
   transform(articles) {
     return articles
