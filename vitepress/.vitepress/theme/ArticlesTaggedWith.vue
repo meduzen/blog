@@ -2,8 +2,9 @@
 import { onBeforeMount, reactive } from 'vue'
 import { useData } from 'vitepress'
 import { data as importedData } from '../../articles.data'
-import Tags from './components/Tags.vue';
 import { slugify } from '@mdit-vue/shared'
+
+import ArticlesList from './components/ArticlesList.vue';
 
 // The following declaration is just to import type autocompletion. 😑
 
@@ -38,15 +39,5 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <template v-for="({ excerpt, frontmatter: { title, publishedAt, tags }, url }) in data">
-
-    <h2><a :href="url" v-html="title"/></h2>
-
-    <datetime :date="publishedAt" formatter="longdate"/>
-    <tags :tags="tags" />
-
-    <p v-if="excerpt" v-html="excerpt"></p>
-
-    <a :href="url">Continue reading</a>
-  </template>
+  <ArticlesList :articles="data"/>
 </template>
