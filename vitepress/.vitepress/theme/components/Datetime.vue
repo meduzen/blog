@@ -1,3 +1,7 @@
+<script>
+const formatterKeys = Object.keys(dateFormatter)
+</script>
+
 <script setup>
 import { datetime } from 'datetime-attribute'
 import { formatter as dateFormatter } from '../../utils/date.mjs';
@@ -16,7 +20,7 @@ const props = defineProps({
   formatter: {
     type: String,
     required: false,
-    validator: value => ['longdate', 'yearless'].includes(value),
+    validator: value => formatterKeys.includes(value),
   }
 })
 
@@ -26,5 +30,6 @@ const str = dateFormatter[props.formatter]?.format(date) ?? datetimeAttr
 </script>
 
 <template>
+  <!-- @todo: Consider: allow a slot, only output {{ str }} when there’s no slot. -->
   <time :datetime="datetimeAttr">{{ str }}</time>
 </template>
