@@ -12,7 +12,9 @@ import { duration } from 'datetime-attribute'
 const props = defineProps({
   w: durationPropOption,
   d: durationPropOption,
+  h: durationPropOption,
   m: durationPropOption,
+  s: durationPropOption,
 })
 </script>
 
