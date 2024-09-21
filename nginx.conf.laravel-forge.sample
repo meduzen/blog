@@ -1,0 +1,78 @@
+# @file Sample nginx.conf that mostly applies to a Laravel Forge server.
+#
+# See `/vitepress/articles/vitepress-cleanurls-on-nginx-environment.md`
+# in this repo or https://blog.mehdi.cc/articles/vitepress-cleanurls-on-nginx-environment
+# for explanations around Vitepress redirect rules applied in this config file.
+
+# FORGE CONFIG (DO NOT REMOVE!)
+# line stripped for security reasons
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name blog.mehdi.cc;
+    server_tokens off;
+    # line stripped for security reasons
+
+    # FORGE SSL (DO NOT REMOVE!)
+    # line stripped for security reasons
+    # line stripped for security reasons
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    # line stripped for security reasons
+    ssl_prefer_server_ciphers off;
+    # line stripped for security reasons
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block"; # Safari < 15.4
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.html;
+
+    charset utf-8;
+
+    # FORGE CONFIG (DO NOT REMOVE!)
+    # line stripped for security reasons
+
+    # remove trailing slash
+    rewrite ^(.+)/+$ $1 permanent;
+
+    # remove trailing index.html
+    if ($request_uri ~ ^/(.*)index\.html(\?|$)) {
+        return 301 /$1;
+    }
+
+    # remove trailing .html
+    # https://stackoverflow.com/questions/38228393/nginx-remove-html-extension
+    if ($request_uri ~ ^/(.*)\.html(\?|$)) {
+        return 301 /$1;
+    }
+
+    # rewrite ^([^.?#]*[^/])$ $1/ permanent; # add trailing slash, reverse of previous
+
+    # -- redirects due to human mistakes: start --
+
+    location = /notes/2024-06-07-i-lost-internet-part-1 {
+        return 301 /notes/2024-09-07-i-lost-internet-part-1;
+    }
+
+    # -- redirects due to human mistakes: end --
+
+    location / {
+        error_page 404 /404.html;
+        try_files $uri $uri.html $uri/ =404;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    access_log off;
+    # line stripped for security reasons
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+
+# FORGE CONFIG (DO NOT REMOVE!)
+# line stripped for security reasons
