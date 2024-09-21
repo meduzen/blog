@@ -10,5 +10,5 @@ export default {
     app.component('datetime', Datetime)
     app.component('duration', Duration)
     app.component('tags', Tags)
-  }
+  },
 }
