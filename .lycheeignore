@@ -4,3 +4,7 @@
 # always answer 403 no matter the online availability
 ^https:\/\/stackoverflow.com\/.*
 ^https:\/\/www.reddit.com\/.*
+
+# 👇 Logging failing domains to see if they still do on the long run…
+# Failed in 2024-09
+# ^https:\/\/direct.mit.edu/qss\/.*
