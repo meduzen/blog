@@ -16,7 +16,7 @@ hero:
 
 features:
   - title: What to expect
-    details: I don’t know yet. Web development stuff, rants, code, jokes.
+    details: I don’t know yet. Web development stuff, rants, code, jokes. You can also [ask me anything](./notes/2024-10-01-ask-me-anything.md).
   - title: Built with Vitepress
     details: I am testing Vitepress to support this space blog.
 ---
