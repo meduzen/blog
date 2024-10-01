@@ -104,7 +104,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Got any comment or question about the content? Feel free to <a href="https://mehdi.cc/#contact" target="_blank" rel="noopener">send me an email</a> or use GitHub <a href="https://github.com/meduzen/blog/discussions" target="_blank" rel="noopener">discussions</a> or <a href="https://github.com/meduzen/blog/issues" target="_blank" rel="noopener">issues</a>.',
+      message: 'Got any comment or question about the content? Feel free to <a href="https://mehdi.cc/#contact" target="_blank" rel="noopener">send me an email</a> or use GitHub <a href="https://github.com/meduzen/blog/discussions" target="_blank" rel="noopener">discussions</a> or <a href="https://github.com/meduzen/blog/issues" target="_blank" rel="noopener">issues</a>. You can also <a href="/notes/2024-10-01-ask-me-anything">ask me anything</a>.',
       // copyright: 'Copyright © 2023-present Mehdi Merah'
     }
   },
