@@ -32,6 +32,7 @@ export default defineConfig({
     // Open Graph
     metaProperty('og:site_name', APP_TITLE),
     metaProperty('og:locale', 'en_GB'),
+    metaProperty('fediverse:creator', '@meduz@m.nintendojo.fr')
   ],
 
   // per page `<head>` entries
