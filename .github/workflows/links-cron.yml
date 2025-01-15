@@ -14,16 +14,20 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+        issues: write # required for peter-evans/create-issue-from-file
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v1.10.0
+        uses: lycheeverse/lychee-action@v2
         with:
           args: 'https://blog.mehdi.cc'
+          fail: false
 
       - name: Create issue
-        if: env.lychee_exit_code != 0
+        if: steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: Lychee Report
