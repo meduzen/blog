@@ -14,7 +14,7 @@ outline: false
 - [TC39 specifications](https://tc39.es/) are free to read. They are for JavaScript.
 - [ISO standards](https://www.iso.org/standards.html) are **not** free to read. They are for an incredible amount of things.
 
-There’s even a [FAQ entry for that on the ISO website](https://www.iso.org/footer-links/frequently-asked-questions-faqs/general-faqs.html):
+There’s even a [FAQ entry for that on the ISO website](https://www.iso.org/contact-iso.html#:~:text=why%20is%20there%20a%20charge%20for%20standards?):
 
 ::: info Why is there a charge for standards?
 > Developing, publishing and maintaining ISO standards incurs a cost, and revenues from selling them helps ISO and its members to cover an important part of these costs. Charging for standards allows us to ensure that they are developed in an impartial environment and therefore meet the needs of all stakeholders for which the standard is relevant. This is essential if standards are to remain effective in the real world. ISO and its members offer a number of options to access ISO standards.

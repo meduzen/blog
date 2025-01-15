@@ -3,9 +3,22 @@
 
 # always answer 403 no matter the online availability
 ^https:\/\/direct.mit.edu\/qss\/.*
-^https:\/\/stackoverflow.com\/.*
+^https:\/\/peertube.fr\/.*
 ^https:\/\/www.reddit.com\/.*
+^https:\/\/www.statista.com\/.*
 
 # 👇 Logging failing domains to see if they still do on the long run…
-# Failed in 2024-09 and 2024-10
+
+# Fails since 2025-01
+# ^https:\/\/www.peertube.fr\/.*
+# ^https:\/\/www.statista.com\/.*
+
+# Fails since 2024-09
 # ^https:\/\/direct.mit.edu\/qss\/.*
+
+# Failed between 2024-04 and 2024-12
+# ^https:\/\/stackoverflow.com\/.*
+# ^https:\/\/www.reddit.com\/.*
+
+# Failed before 2025-01
+# ^https:\/\/www.reddit.com\/.*
