@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@size-limit/preset-app": "^11",
-    "fast-glob": "^3.3.2",
+    "fast-glob": "^3.3.3",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "size-limit": "^11"
