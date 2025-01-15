@@ -12,7 +12,7 @@
     "test:absolute-links": "lychee vitepress/**/*.md --base ./vitepress/public"
   },
   "devDependencies": {
-    "@size-limit/preset-app": "^11",
+    "@size-limit/file": "^11",
     "fast-glob": "^3.3.3",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
