@@ -6,7 +6,7 @@ publishedAt: 2023-11-18
 outline: [2, 3]
 ---
 
-::: info Article updated on <time datetime="2025-02-07">7 February 2025</time>
+::: info Article updated on <datetime date="2025-02-07" formatter="longdate"/>
 [Read all about the changes](../articles/macos-sonoma-download-xcode-simulators-slow-bandwidth.md#updates-to-this-article).
 :::
 
