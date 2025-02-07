@@ -6,11 +6,11 @@ publishedAt: 2023-11-18
 outline: [2, 3]
 ---
 
-Since [macOS Sonoma](https://www.apple.com/macos/sonoma/) (codename for macOS 14), [Xcode](https://developer.apple.com/xcode/) doesn’t include any iOS Simulator anymore, so it’s now 50% lighter to download (3.2 GB instead of 7 GB), which is nice… except that downloading the Simulator separately sucks if your bandwidth is slow.
 ::: info Article updated on <time datetime="2025-02-07">7 February 2025</time>
 [Read all about the changes](../articles/macos-sonoma-download-xcode-simulators-slow-bandwidth.md#updates-to-this-article).
 :::
 
+Since [macOS Sonoma](https://www.apple.com/macos/sonoma/) (macOS 14), [Xcode](https://developer.apple.com/xcode/) doesn’t include any iOS Simulator anymore, so it’s now 50% lighter to download (3.2 GB instead of 7 GB), which is nice… except that downloading the Simulator separately sucks <del datetime="2025-06-07">if your bandwidth is slow</del> <ins datetime="2025-06-07">and will peak below 5 MB/s no matter your bandwidth</ins>.
 
 ---
 # Downloading Xcode Simulators on macOS Sonoma when the bandwidth is slow
@@ -60,7 +60,7 @@ xcrun simctl runtime add iOS_17.0.1_Simulator_Runtime.dmg
 
 The command should take around 20 seconds to run. Now you can open Spotlight and type _Simulator_.
 
-w00t! Another dumb mystery that should not exist is now solved. 💁‍♂️
+<abbr title="We own the other team">w00t</abbr>! Another dumb mystery that should not exist is now solved. 💁‍♂️
 
 ## What are Xcode Simulators, by the way?
 
