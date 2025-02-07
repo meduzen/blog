@@ -2,12 +2,20 @@
 ^http:\/\/schema.org\/.*
 
 # always answer 403 no matter the online availability
+^https:\/\/dev.mysql.com\/blog\/.*
+^https:\/\/dev.mysql.com\/blog-archive\/.*
+^https:\/\/dev.mysql.com\/doc\/refman\/.*
 ^https:\/\/direct.mit.edu\/qss\/.*
 ^https:\/\/peertube.fr\/.*
 ^https:\/\/www.reddit.com\/.*
 ^https:\/\/www.statista.com\/.*
 
 # 👇 Logging failing domains to see if they still do on the long run…
+
+# Fails since 2025-02
+# ^https:\/\/dev.mysql.com\/blog\/.*
+# ^https:\/\/dev.mysql.com\/blog-archive\/.*
+# ^https:\/\/dev.mysql.com\/doc\/refman\/.*
 
 # Fails since 2025-01
 # ^https:\/\/www.peertube.fr\/.*
