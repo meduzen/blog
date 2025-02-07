@@ -95,7 +95,7 @@ export default defineConfig({
 
         /**
          * @todo: PR Vitepress so that returning a false-ish value should
-         * prevennt to display the link. In the meantime, use the same pattern.
+         * prevent to display the link. In the meantime, use the same pattern.
          * - https://github.com/vuejs/vitepress/blob/a482611d17197a0b7afc403891cd95f344e7a55f/src/client/theme-default/components/VPDocFooter.vue#L13C7-L13C15
          * - https://github.com/vuejs/vitepress/blob/a482611d17197a0b7afc403891cd95f344e7a55f/src/client/theme-default/composables/edit-link.ts#L10
          */

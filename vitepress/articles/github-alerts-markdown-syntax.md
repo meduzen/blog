@@ -6,7 +6,7 @@ publishedAt: 2024-02-03
 excerpt: I loved the _GitHub Markdown syntax for alerts_ until it [landed in Vitepress](https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md#100-rc40-2024-1-22), which made me think about it. Now [I think it sucks]().
 ---
 
-::: info Article updated on <time datetime="2024-02-04">4 February 2024</time>
+::: info Article updated on <datetime date="2024-02-04" formatter="longdate"/>
 [Read all about the changes](../articles/github-alerts-markdown-syntax.md#updates-to-this-article).
 :::
 

@@ -6,7 +6,11 @@ publishedAt: 2023-11-18
 outline: [2, 3]
 ---
 
-Since [macOS Sonoma](https://www.apple.com/macos/sonoma/) (codename for macOS 14), [Xcode](https://developer.apple.com/xcode/) doesn’t include any iOS Simulator anymore, so it’s now 50% lighter to download (3.2 GB instead of 7 GB), which is nice… except that downloading the Simulator separately sucks if your bandwidth is slow.
+::: info Article updated on <datetime date="2025-02-07" formatter="longdate"/>
+[Read all about the changes](../articles/macos-sonoma-download-xcode-simulators-slow-bandwidth.md#updates-to-this-article).
+:::
+
+Since [macOS Sonoma](https://www.apple.com/macos/sonoma/) (macOS 14), [Xcode](https://developer.apple.com/xcode/) doesn’t include any iOS Simulator anymore, so it’s now 50% lighter to download (3.2 GB instead of 7 GB), which is nice… except that downloading the Simulator separately sucks <del datetime="2025-06-07">if your bandwidth is slow</del> <ins datetime="2025-06-07">and will peak below 5 MB/s no matter your bandwidth</ins>.
 
 ---
 # Downloading Xcode Simulators on macOS Sonoma when the bandwidth is slow
@@ -56,7 +60,7 @@ xcrun simctl runtime add iOS_17.0.1_Simulator_Runtime.dmg
 
 The command should take around 20 seconds to run. Now you can open Spotlight and type _Simulator_.
 
-w00t! Another dumb mystery that should not exist is now solved. 💁‍♂️
+<abbr title="We own the other team">w00t</abbr>! Another dumb mystery that should not exist is now solved. 💁‍♂️
 
 ## What are Xcode Simulators, by the way?
 
@@ -83,3 +87,12 @@ Simulators are handy, robust and come with a good set of features, like the abil
 
 View this screenshot in light mode ([WebP](/content/ios-simulator-safari-light.webp), [PNG](/content/ios-simulator-safari-light.png)) or in dark mode ([WebP](/content/ios-simulator-safari-dark.webp), [PNG](/content/ios-simulator-safari-dark.png)).
 :::
+
+## Updates to this article
+
+### <datetime date="2025-02-07" formatter="longdate"/>
+
+- I now have fast internet and have noticed a slow bandwidth isn’t the only issue to download the Simulator runtime: the download speed is throttled anyway for [failing](#fail-the-traditional-way) [situations](#fail-same-player-try-again-with-the-command-line).
+- Bad news: [the only successful possibility](#success-use-safari) got killed: Apple does’t provide new iOS Simulator runtimes as direct download on their website since iOS 18.3. I still have to try to download it, pending a macOS computer update before I do. Previous runtimes (iOS 18.2 and below) are still available and fast to download.
+
+If you want to share how this change impacts you, follow the website footer and tell me.
