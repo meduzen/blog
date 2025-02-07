@@ -18,6 +18,15 @@ kbd {
   box-shadow: .1em .1em 0 1px currentColor;
 }
 
+abbr {
+  text-decoration: none;
+}
+
+ins {
+  /* @todo Find a UI idea for new content. */
+  text-decoration: none;
+}
+
 /* Hide content visually */
 
 .visually-hidden:not(:focus):not(:active) {
