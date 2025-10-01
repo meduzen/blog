@@ -14,7 +14,7 @@
   "devDependencies": {
     "@size-limit/file": "^11",
     "fast-glob": "^3.3.3",
-    "feed": "^4.2.2",
+    "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
     "size-limit": "^11"
   },
