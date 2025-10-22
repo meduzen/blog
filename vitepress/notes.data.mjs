@@ -1,4 +1,3 @@
-import groupBy from "core-js-pure/full/object/group-by"
 import { createContentLoader, createMarkdownRenderer } from 'vitepress'
 import { comparePublicationDate, hasExcerptInFrontmatter, isPublished } from "./.vitepress/utils/frontmatter.mjs"
 
@@ -33,6 +32,6 @@ export default createContentLoader('notes/*.md', {
 
     const dateFormatter = new Intl.DateTimeFormat('en-BG', { year: 'numeric' })
 
-    return groupBy(notes, note => dateFormatter.format(note.frontmatter.publishedAt))
+    return Object.groupBy(notes, note => dateFormatter.format(note.frontmatter.publishedAt))
   }
 })
