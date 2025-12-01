@@ -12,11 +12,11 @@
     "test:absolute-links": "lychee vitepress/**/*.md --base ./vitepress/public"
   },
   "devDependencies": {
-    "@size-limit/file": "^11",
+    "@size-limit/file": "^12",
     "fast-glob": "^3.3.3",
     "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
-    "size-limit": "^11"
+    "size-limit": "^12"
   },
   "dependencies": {
     "@mdit-vue/shared": "^2.1.3",
