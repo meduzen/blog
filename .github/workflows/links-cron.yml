@@ -31,6 +31,7 @@ jobs:
         if: steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v6
         with:
+          issue-number: 99
           title: Lychee Report
           content-filepath: ./lychee/out.md
           labels: ci
