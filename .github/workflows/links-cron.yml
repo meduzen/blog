@@ -28,7 +28,6 @@ jobs:
           fail: false
 
       - name: Create issue
-        if: steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v6
         with:
           issue-number: 99
