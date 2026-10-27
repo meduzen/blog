@@ -54,6 +54,12 @@ export default defineConfig({
     ]
   },
 
+  // // add temporary stupid tracking - commented and kept for faster further reuse
+  // transformHtml: async code => code.replace(
+  //   '\n  </body>\n</html>',
+  //   '<img class="visually-hidden" src="https://matomo.mehdi.cc/piwik.php?idsite=4&amp;rec=1" style="border:0" alt=""></body>\n</html>'
+  // ),
+
   appearance: 'force-auto',
 
   themeConfig: {
