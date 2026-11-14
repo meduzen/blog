@@ -5,7 +5,7 @@ tags: laravel, tests, html
 publishedAt: 2026-11-14
 ---
 
-I’ve stopped using `assertSee` in my Laravel tests because [it’s a trap](https://itsatr.app) (unrelated&#58; I once owned this domain). Instead, [I reach for]() `assertSeeText` and `assertSeeHtml`.
+I’ve stopped using `assertSee` in my Laravel tests because [it’s a trap](https://itsatr.app) (unrelated&#58; I once owned this domain). Instead, [I reach for](../articles/laravel-assertions-on-invalid-html.md) `assertSeeText` and `assertSeeHtml`.
 
 ---
 
