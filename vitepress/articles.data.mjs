@@ -3,7 +3,7 @@ import {
   comparePublicationDate,
   isPublished,
   tagsToArray
-} from "./.vitepress/utils/frontmatter.mjs"
+} from './.vitepress/utils/frontmatter.mjs'
 
 const mdRenderer = await createMarkdownRenderer()
 
