@@ -13,6 +13,10 @@ I’ve stopped using `assertSee` in my Laravel tests because [it’s a trap](htt
 
 <datetime :date="$frontmatter.publishedAt" formatter="longdate"/>
 
+Stack for this post:
+- Laravel 13.38.0
+- PHP 8.5.12
+
 Laravel [`assertSeeText`](https://laravel.com/framework/docs/13.x/http-tests#assert-see-text) contains a trap: sometimes the content you expect to find in the tested HTML is there, but the test still fails. Without understanding why, you fall back on [`assertSee`](https://laravel.com/framework/docs/13.x/http-tests#assert-see) and your test passes again:
 
 ```php
