@@ -16,6 +16,7 @@
     "fast-glob": "^3.3.3",
     "feed": "^5.1.0",
     "gray-matter": "^4.0.3",
+    "html-minifier": "^5.2.0",
     "size-limit": "^14"
   },
   "dependencies": {
