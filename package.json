@@ -25,7 +25,10 @@
     "vitepress": "^1.2.2"
   },
   "overrides": {
-    "@docsearch/js": "npm:lightningcss@0.0.0"
+    "@docsearch/js": "npm:lightningcss@0.0.0",
+    "lightningcss": "npm:lightningcss@0.0.0",
+    "svgo": "npm:lightningcss@0.0.0",
+    "terser": "npm:lightningcss@0.0.0"
   },
   "allowScripts": {
     "esbuild@0.21.5": true,
