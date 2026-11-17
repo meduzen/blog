@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { minify } from 'html-minifier'
 import { rss } from './rss.mjs'
 import { getOpenGraphTags } from './utils/pagedata.mjs'
 import { metaName, metaProperty } from './utils/head.mjs'
@@ -52,6 +53,14 @@ export default defineConfig({
       metaProperty('og:url', canonicalUrl),
       ...getOpenGraphTags(pageData),
     ]
+  },
+
+  async transformHtml(code) {
+    // https://github.com/j9t/html-minifier?tab=readme-ov-file#options-quick-reference
+    return minify(code, {
+      preset: 'comprehensive',
+      removeComments: false // Vue needs comment markers for hydration
+    })
   },
 
   // // add temporary stupid tracking - commented and kept for faster further reuse
