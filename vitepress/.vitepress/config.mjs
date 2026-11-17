@@ -58,7 +58,7 @@ export default defineConfig({
   async transformHtml(code) {
     // https://github.com/j9t/html-minifier?tab=readme-ov-file#options-quick-reference
     return minify(code, {
-      preset: 'conservative',
+      preset: 'comprehensive',
       removeComments: false // Vue needs comment markers for hydration
     })
   },
